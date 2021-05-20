@@ -1,0 +1,70 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class Main {
+
+    private static String getType(Object a) {
+        return a.getClass().toString();
+
+    }
+    public static void main(String[] args) {
+//        生成5位验证码
+        Random random = new Random();
+//        System.out.println("5位验证码:"+random.nextInt(9)+random.nextInt(9)+random.nextInt(9)+random.nextInt(9));
+//        生成5位不同数字的验证码
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0;i < 5;i++){
+//            定义判断结果
+            int result = 0;
+//            定义随机生成的数字
+            int i1 = random.nextInt(9);
+            for (int j = 0;j < list.size();j++){
+                if (i1 == list.get(j)){
+                    result = 1;
+                }
+            }
+            if (result == 1){
+                i--;
+            }else {
+                list.add(i1);
+            }
+        }
+//        验证码拼接
+        String bin = new String();
+        for (int i = 0;i < list.size();i++){
+            bin += list.get(i);
+        }
+        System.out.println(bin);
+
+
+        String filePath = "F://demo.txt";
+        try {
+            File file = new File(filePath);
+            InputStreamReader isr = new InputStreamReader(new FileInputStream(file), "utf-8");
+            BufferedReader br = new BufferedReader(isr);
+            String text = null;
+            String [] textlist = null;
+            List lineTxt = new ArrayList();
+            int num =0;
+            long time1 = System.currentTimeMillis();
+            int jilu = 0;
+            while ((text = br.readLine()) != null) {
+                textlist = text.split(",");
+                for (int i = 0;i < textlist.length;i++){
+                    lineTxt.add(textlist[i]);
+                }
+                num++;
+            }
+            Integer[] lineText = new Integer[lineTxt.size()];
+            for (int i = 0;i < lineTxt.size();i++){
+                jilu = Integer.parseInt(lineTxt.get(i).toString());
+                lineText[i] = jilu;
+            }
+        }catch (Exception e){
+
+        }
+    }
+}
