@@ -1,0 +1,411 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <script src="./js/jquery-3.5.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="layui-v2.6.8/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css?timestamp=" + new Date().getTime();/>
+    <link rel="stylesheet" type="text/css" href="css/index-all.css?timestamp=" + new Date().getTime();/>
+    <style>
+    	body{
+    		overflow:hidden;
+    		width: 100%;
+    	}
+    </style>
+</head>
+<body>
+	<div class="jia_zai_zhong">
+		<div class="jia_zai_zhong_all">
+			<div class="jia_zai_zhong_img">
+				<img src="./img/jia_zai_zhong.png" />
+			</div>
+			<div class="jia_zai_zhong_text">
+				<div class="loader-inner ball-beat">
+				  <div></div>
+				  <div></div>
+				  <div></div>
+				</div>
+				
+				<div class="loader-inner ball-beat" style="margin-left: 5px;">
+				  <div></div>
+				  <div></div>
+				  <div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mask"></div>
+    <div id="app">
+    	<div class="index_zhu_ti">
+    		<div class="index_zhu_bei_jing">
+    			<img src="img/shangpins-beijing.jpg?1" >
+    		</div>
+			<div class="index_zhu-fu_wu">
+				<div class="index_zhu-fu_wu-one">
+					<div class="index_zhu-fu_wu-one-zi" data-url="http://go.citicbank.com/xkjml-01">
+						<div class="index_zhu-fu_wu-one-zi-img">
+							<img src="./img/fu_wu_1.png" >
+						</div>
+						<div class="index_zhu-fu_wu-one-zi-text">
+							新客见面礼
+						</div>
+					</div>
+					<div class="index_zhu-fu_wu-one-zi" data-url="https://dkzx.e-pointchina.com.cn/shop_citic_red/vip_value.html">
+						<div class="index_zhu-fu_wu-one-zi-img">
+							<img src="./img/fu_wu_7.png" >
+						</div>
+						<div class="index_zhu-fu_wu-one-zi-text">
+							贵宾增值服务
+						</div>
+					</div>
+					<!--<div class="index_zhu-fu_wu-one-zi">-->
+					<!--	<div class="index_zhu-fu_wu-one-zi-img">-->
+					<!--		<img src="./img/fu_wu_2.png" >-->
+					<!--	</div>-->
+					<!--	<div class="index_zhu-fu_wu-one-zi-text">-->
+					<!--		幸福一分购-->
+					<!--	</div>-->
+					<!--</div>-->
+					<div class="index_zhu-fu_wu-one-zi" data-url="https://yj.wangpu365.com/?site=atity&ctl=elderly&act=gift&channel=CITICred">
+						<div class="index_zhu-fu_wu-one-zi-img">
+							<img src="./img/fu_wu_3.png" >
+						</div>
+						<div class="index_zhu-fu_wu-one-zi-text">
+							推荐有礼
+						</div>
+					</div>
+					<div class="index_zhu-fu_wu-one-zi" data-url="https://dkzx.e-pointchina.com.cn/shop_citic_red/showpage/citic_xwc.html">
+						<div class="index_zhu-fu_wu-one-zi-img">
+							<img src="./img/fu_wu_4.png" >
+						</div>
+						<div class="index_zhu-fu_wu-one-zi-text">
+							开薪下午茶
+						</div>
+					</div>
+					<div class="index_zhu-fu_wu-one-zi" data-url="https://dkzx.e-pointchina.com.cn/shop_citic_red/showpage/citic_cfjj.html">
+						<div class="index_zhu-fu_wu-one-zi-img">
+							<img src="./img/fu_wu_5.png" >
+						</div>
+						<div class="index_zhu-fu_wu-one-zi-text">
+							财富进阶礼
+						</div>
+					</div>
+					<div class="index_zhu-fu_wu-one-zi" data-url="https://dkzx.e-pointchina.com.cn/shop_citic_red/guiren.html">
+						<div class="index_zhu-fu_wu-one-zi-img">
+							<img src="./img/fu_wu_6.png" >
+						</div>
+						<div class="index_zhu-fu_wu-one-zi-text">
+							贵人驾到
+						</div>
+					</div>
+					<div class="index_zhu-fu_wu-one-zi" data-url="#">
+						
+					</div>
+					<div class="index_zhu-fu_wu-one-zi" data-url="#">
+						
+					</div>
+				</div>
+				<div class="index_zhu-fu_wu-one index_zhu-fu_wu-two">
+					<!--<div class="index_zhu-fu_wu-one-zi_huo_dong">-->
+					<!--	<div class="index_zhu-fu_wu-one-zi-img">-->
+					<!--		<img src="./img/fu_wu_8.png" >-->
+					<!--	</div>-->
+					<!--	<div class="index_zhu-fu_wu-one-zi-text">-->
+					<!--		薪选1元GO-->
+					<!--	</div>-->
+					<!--</div>-->
+				</div>
+			</div>
+			<div class="index_zhu_guang_gao">
+				<img src="./img/index_zhu_ye.png" />
+			</div>
+			<div class="shangpins_zhu_ti-my-order">
+				<div class="shangpins_zhu_ti-my-order-img">
+					<img src="./img/my-order.png" />
+				</div>
+				<div class="shangpins_zhu_ti-my-order-text">
+					我的订单
+				</div>
+			</div>
+			<div class="index_zhu_zhuan_qu">
+				<div class="index_zhu_zhuan_qu_zuo">
+					<div class="index_zhu_zhuan_qu_zuo_1 index_zhu_zhuan_qu_zuo_1_phone" style="display: none;">
+						<div class="index_zhu_zhuan_qu_zuo_1_txt_1">
+							话费充值
+						</div>
+						<div class="index_zhu_zhuan_qu_zuo_1_txt_2">
+							三网话费充值
+						</div>
+						<img src="./img/index-guang-gao-1.png" >
+					</div>
+					<div class="index_zhu_zhuan_qu_zuo_1 index_zhu_zhuan_qu_zuo_1_shangpins" data-value="0">
+						<div class="index_zhu_zhuan_qu_zuo_1_txt_1">
+							视听会员
+						</div>
+						<div class="index_zhu_zhuan_qu_zuo_1_txt_2">
+							各大平台会员优惠
+						</div>
+						<img src="./img/index-guang-gao-2.png?timestamp=" + new Date().getTime(); >
+					</div>
+					<div class="index_zhu_zhuan_qu_zuo_1 index_zhu_zhuan_qu_zuo_1_shangpins" data-value="1">
+						<div class="index_zhu_zhuan_qu_zuo_1_txt_1">
+							生活服务
+						</div>
+						<div class="index_zhu_zhuan_qu_zuo_1_txt_2">
+							出行外卖，读书电影
+						</div>
+						<img src="./img/index-guang-gao-3.png?timestamp=" + new Date().getTime(); >
+					</div>
+				</div>
+				<div class="index_zhu_zhuan_qu_you index_zhu_zhuan_qu_zuo_1_shangpins" data-value="3">
+					<div class="index_zhu_zhuan_qu_you_1_txt_1">
+						咖啡餐饮
+					</div>
+					<div class="index_zhu_zhuan_qu_you_1_txt_2">
+						午后咖啡，精品美食
+					</div>
+					<div class="index_zhu_zhuan_qu_you_1">
+						<img src="./img/index-guang-gao-4-1.png?timestamp=" + new Date().getTime(); >
+					</div>
+				</div>
+			</div>
+			<div class="index_zhu_li_cai">
+				<div class="index_zhu_li_cai_ju_xing">
+					
+				</div>
+				<div class="index_zhu_li_cai_text">
+					理财专区
+				</div>
+			</div>
+			<div class="index_zhu_li_cai_kuai">
+				<div class="index_zhu_li_cai_kuai-zi">
+					<div class="index_zhu_li_cai_kuai-zi-1" data-url="https://wap.bank.ecitic.com/NMBFOServer/MobileBankWeb/?index=Share.GodbalShare.Index&key=1DD2FF2692FFEC39037F114F8CC3FA206A7BE46DA7FF55F1">
+					    <div class="index_zhu_li_cai_kuai-zi-zu-jian-1">
+					        <img src="./img/li_cai_zu_jian_1.png">
+					    </div>
+					    <div class="index_zhu_li_cai_kuai-zi_wen_zi">
+					        <div class="index_zhu_li_cai_kuai-zi_wen_zi_title">
+					            天天利
+					        </div>
+					        <div class="index_zhu_li_cai_kuai-zi_wen_zi_txt">
+					            天天优惠享不停
+					        </div>
+					    </div>
+						<img src="./img/li_cai_1.png" />
+					</div>
+					<div class="index_zhu_li_cai_kuai-zi-1" style="margin-left: 3%;" data-url="https://ecitich5.urthink.com/s/1ZboKL3q?yj_id=1789_eciticddb30527080dbb0e&t=1627865911&org_code=731101&recommend=111156">
+					    <div class="index_zhu_li_cai_kuai-zi-zu-jian-2">
+					        <img src="./img/li_cai_zu_jian_2.png">
+					    </div>
+					    <div class="index_zhu_li_cai_kuai-zi_wen_zi">
+					        <div class="index_zhu_li_cai_kuai-zi_wen_zi_title">
+					            信秒贷
+					        </div>
+					        <div class="index_zhu_li_cai_kuai-zi_wen_zi_txt">
+					            秒启动美好生活
+					        </div>
+					    </div>
+						<img src="./img/li_cai_2.png" />
+					</div>
+				</div>
+				<div class="index_zhu_li_cai_kuai-zi" style="margin-top: 13px;">
+					<div class="index_zhu_li_cai_kuai-zi-1" data-url="http://go.citicbank.com/df-91">
+					    <div class="index_zhu_li_cai_kuai-zi-zu-jian-3">
+					        <img src="./img/li_cai_zu_jian_3.png">
+					    </div>
+					    <div class="index_zhu_li_cai_kuai-zi_wen_zi">
+					        <div class="index_zhu_li_cai_kuai-zi_wen_zi_title">
+					            开薪1号-专属理财
+					        </div>
+					        <div class="index_zhu_li_cai_kuai-zi_wen_zi_txt">
+					            推荐适合您的理财
+					        </div>
+					    </div>
+						<img src="./img/li_cai_3.png" />
+					</div>
+					<div class="index_zhu_li_cai_kuai-zi-1" style="margin-left: 3%;" data-url="http://go.citicbank.com/df2">
+					    <div class="index_zhu_li_cai_kuai-zi-zu-jian-3">
+					        <img src="./img/li_cai_zu_jian_3.png">
+					    </div>
+					    <div class="index_zhu_li_cai_kuai-zi_wen_zi">
+					        <div class="index_zhu_li_cai_kuai-zi_wen_zi_title">
+					            开薪2号-专属理财
+					        </div>
+					        <div class="index_zhu_li_cai_kuai-zi_wen_zi_txt">
+					            推荐适合您的理财
+					        </div>
+					    </div>
+						<img src="./img/li_cai_4.png" />
+					</div>
+				</div>
+				<div style="height: 81px;background-color: rgba(253,237,221,1);border-radius: 10px;margin-top:13px;">
+				    <div class="index_zhu_li_cai_kuai-zi-1" data-url="https://m.h5.qwomcrm.com/2008/n/1001/citicbank/200811-xinjinbao">
+					    <div class="index_zhu_li_cai_kuai-zi-zu-jian-4">
+					        <img src="./img/li_cai_zu_jian_4.png">
+					    </div>
+					    <div class="index_zhu_li_cai_kuai-zi_wen_zi">
+					        <div class="index_zhu_li_cai_kuai-zi_wen_zi_title">
+					            开薪易
+					        </div>
+					        <div class="index_zhu_li_cai_kuai-zi_wen_zi_txt">
+					            工资分四份攒钱更轻松
+					        </div>
+					    </div>
+						<!--<img src="./img/li_cai_4.png" style="height: 81px;" />-->
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <script src="./js/gongju.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".index_zhu_guang_gao,.index_zhu-fu_wu-one-zi_huo_dong").click(function(){
+		    var userZhuangTai = localStorage.getItem("userZhuangTai");
+		        $.ajax({
+				url:"http://172.16.7.179:8080/api/token/shangXianHuoDong",
+				type: "POST",
+				async: false,
+				dataType:'json',
+				success:function(result){
+					if(result.code == 0){
+					    if(result.value.length > 0){
+					        var zhuang_tai = huo_dong(result.value[0].id);
+                		    if(zhuang_tai == 0){
+                		        window.location.href = "huodong.html";
+                		    }else{
+                		        layer.msg("活动尚未开始，敬请期待");
+                		    }
+					    }else{
+					        layer.msg("活动尚未开始，敬请期待");
+					    }
+					}else{
+						layer.msg("活动尚未开始，敬请期待");
+					}
+				},error:function(result){
+					layer.msg("服务器响应失败请联系管理员");
+				}
+			});
+		});
+		$(".index_zhu_zhuan_qu_zuo_1_phone").click(function(){
+			window.location.href = "phone.html";
+		});
+		$(".index_zhu_zhuan_qu_zuo_1_shangpins").click(function(){
+			window.location.href = "shanpins.html?type="+$(this).attr("data-value");
+		});
+		//活动渲染
+		function shu_ju_xuan_ran(id){
+		    var shi_fou_ke_yi_tiao_zhuan = 0;
+			$.ajax({
+				url:"http://172.16.7.179:8080/api/token/huoDongShangPin",
+				type: "POST",
+				async: false,
+				data:{"huoDongId":id},
+				dataType:'json',
+				success:function(result){
+					if(result.code == 0){
+						if(result.value.length <= 0){
+						    shi_fou_ke_yi_tiao_zhuan = 1;
+						}
+					}else{
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				},error:function(result){
+					layer.msg("服务器响应失败请联系管理员");
+				}
+			});
+			return shi_fou_ke_yi_tiao_zhuan;
+		}
+		//查询活动详情
+		function huo_dong(id){
+		    var shi_fou_ke_yi_tiao_zhuan = 0;
+			$.ajax({
+				url:"http://172.16.7.179:8080/api/token/huoDongQuaner",
+				type: "POST",
+				async: false,
+				data:{"id":id},
+				dataType:'json',
+				success:function(result){
+					var bei_jing_tu_pian = 0;
+					if(result.code == 0){
+						if(result.value.huoDongZhuangTai != 0){
+							shi_fou_ke_yi_tiao_zhuan = 1;
+						}else{
+						    shi_fou_ke_yi_tiao_zhuan = shu_ju_xuan_ran(id);
+						}
+					}else{
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				},error:function(result){
+					layer.msg("服务器响应失败请联系管理员");
+				}
+			});
+			return shi_fou_ke_yi_tiao_zhuan;
+		}
+		var uid = GetRequest().uid;
+// 		if(uid == "bLwAa6dOCGXUBB16RKSGywMARK3DMARK3D"){
+// 		    window.location.href = "zhuan_yong_ceshi.html";
+// 		}
+		if(uid == null){
+		    uid = localStorage.getItem("userId");
+		    $.ajax({
+			url:"http://172.16.7.179:8080/api/token/user",
+			type: "POST",
+			async: false,
+			data:{"uid":uid},
+			dataType:'json',
+			success:function(result){
+				if(result.code == 0){
+				// 	layer.msg('得到了用户'+result.value.openId);
+					localStorage.setItem("userId", result.value.userId);
+				}else{
+				// 	layer.msg("服务器响应失败请联系管理员");
+				    // alert("尊敬的客户，很抱歉，您并非本次活动的指定用户");
+				    // window.history.back();
+				    // window.close();
+				}
+			},error:function(result){
+				// layer.msg("服务器响应失败请联系管理员");
+			    window.history.back();
+			}
+		  });
+		}else{
+		    $.ajax({
+			url:"http://172.16.7.179:8080/api/token/user",
+			type: "POST",
+			async: false,
+			data:{"uid":uid},
+			dataType:'json',
+			success:function(result){
+				if(result.code == 0){
+				// 	layer.msg('得到了用户'+result.value.openId);
+					localStorage.setItem("userId", result.value.userId);
+				}else{
+				// 	layer.msg("服务器响应失败请联系管理员");
+				    // alert("尊敬的客户，很抱歉，您并非本次活动的指定用户");
+				    // window.history.back();
+				    // window.close();
+				}
+			},error:function(result){
+				// layer.msg("服务器响应失败请联系管理员");
+			
+			    window.history.back();
+			}
+		  });
+		}
+        //点击跳转
+        $("body").on("click",".index_zhu-fu_wu-one-zi,.index_zhu_li_cai_kuai-zi-1",function(){
+            if($(this).attr("data-url") != null){
+                window.location.href = $(this).attr("data-url"); 
+            }else{
+                layer.msg("该活动尚未开始");
+            }
+        });
+		// 点击跳转到我的订单
+		$(".shangpins_zhu_ti-my-order").click(function(){
+			window.location.href = "myorder.html";
+		});
+	</script>
+</body>
+</html>

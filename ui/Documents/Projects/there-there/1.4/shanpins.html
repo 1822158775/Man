@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商品列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<script src="./js/jquery-3.5.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layui-v2.6.8/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/gongju.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/shangpins.css"/>
+		<style>
+			body{
+				overflow:hidden;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="jia_zai_zhong">
+			<div class="jia_zai_zhong_all">
+				<div class="jia_zai_zhong_img">
+					<img src="./img/jia_zai_zhong.png" />
+				</div>
+				<div class="jia_zai_zhong_text">
+					<div class="loader-inner ball-beat">
+					  <div></div>
+					  <div></div>
+					  <div></div>
+					</div>
+					
+					<div class="loader-inner ball-beat" style="margin-left: 5px;">
+					  <div></div>
+					  <div></div>
+					  <div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mask"></div>
+		<div id="app">
+			<div class="shangpins_zhu_ti">
+				<div class="shangpins_zhu_ti-bei-jing">
+					<img src="img/shangpinleis.png" />
+				</div>
+				<div class="shangpins_zhu_ti-dao-hang">
+					<div class="shangpins_zhu_ti-dao-hang-zi" data-value="0">
+						<div class="shangpins_zhu_ti-dao-hang-zi-img" style="top: 15px;">
+							<img src="./img/s_t_h_y.png" style="width: 28px;height: 24px;"/>
+						</div>
+						<div class="shangpins_zhu_ti-dao-hang-zi-text">
+							视听会员
+						</div>
+					</div>
+					<div class="shangpins_zhu_ti-dao-hang-zi" data-value="1">
+						<div class="shangpins_zhu_ti-dao-hang-zi-img" style="top: 15px;">
+							<img src="./img/s_h_f_w.png" style="width: 21px;height: 27px;"/>
+						</div>
+						<div class="shangpins_zhu_ti-dao-hang-zi-text">
+							生活服务
+						</div>
+					</div>
+					<div class="shangpins_zhu_ti-dao-hang-zi" data-value="h_f_c_z">
+						<div class="shangpins_zhu_ti-dao-hang-zi-img" style="top: 12px;">
+							<img src="./img/h_f_c_z.png" style="width: 34px;height: 33px;"/>
+						</div>
+						<div class="shangpins_zhu_ti-dao-hang-zi-text">
+							话费充值
+						</div>
+					</div>
+					<div class="shangpins_zhu_ti-dao-hang-zi" data-value="3">
+						<div class="shangpins_zhu_ti-dao-hang-zi-img" style="top: 17px;">
+							<img src="./img/c_y_m_s.png" style="width: 28px;height: 27px;"/>
+						</div>
+						<div class="shangpins_zhu_ti-dao-hang-zi-text">
+							餐饮美食
+						</div>
+					</div>
+					<div class="shangpins_zhu_ti-dao-hang-zi_xia_biao">
+						<div class="shangpins_zhu_ti-dao-hang-zi_xia_biao_zi">
+							
+						</div>
+					</div>
+				</div>
+				<div class="shangpins_zhu_ti-shang-pin">
+					<div class="shangpins_zhu_ti-my-order">
+						<div class="shangpins_zhu_ti-my-order-img">
+							<img src="./img/my-order.png" />
+						</div>
+						<div class="shangpins_zhu_ti-my-order-text">
+							我的订单
+						</div>
+					</div>
+					<div class="shangpins_zhu_ti_xuan-ran">
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./js/TweenMax.min.js"></script>
+		<script type="text/javascript">
+			var shangPinType = GetRequest().type;
+			if(shangPinType == null){
+				shangPinType = 0;
+			}else{
+				var data_value = shangPinType;
+				var width_kuan = $(".shangpins_zhu_ti-dao-hang-zi").css("width");
+				width_kuan = parseInt(width_kuan);
+				width_kuan = width_kuan * data_value;
+				var zhu_ti_width_kuan = parseInt($(".shangpins_zhu_ti-dao-hang-zi").css("width")) - parseInt($(".shangpins_zhu_ti-dao-hang-zi-text").css("width"));
+				var zhu_ti_ju_li_width_kuan = zhu_ti_width_kuan / 2;
+				TweenMax.to(".shangpins_zhu_ti-dao-hang-zi_xia_biao_zi",1,
+				            {
+				  "margin-left":(width_kuan + zhu_ti_ju_li_width_kuan) ,//控制x方向大小
+				})
+				
+				console.log(width_kuan)
+			}
+			// 点击跳转到我的订单
+			$(".shangpins_zhu_ti-my-order").click(function(){
+				window.location.href = "myorder.html";
+			});
+			shu_ju_xuan_ran(shangPinType);
+			// 点击切换类型
+			$('.shangpins_zhu_ti-dao-hang-zi').click(function(){
+				var data_value = $(this).attr("data-value");
+				var width_kuan = $(".shangpins_zhu_ti-dao-hang-zi").css("width");
+				width_kuan = parseInt(width_kuan);
+				width_kuan = width_kuan * data_value;
+				var zhu_ti_width_kuan = parseInt($(".shangpins_zhu_ti-dao-hang-zi").css("width")) - parseInt($(".shangpins_zhu_ti-dao-hang-zi-text").css("width"));
+				var zhu_ti_ju_li_width_kuan = zhu_ti_width_kuan / 2;
+				TweenMax.to(".shangpins_zhu_ti-dao-hang-zi_xia_biao_zi",1,
+				            {
+				  "margin-left":(width_kuan + zhu_ti_ju_li_width_kuan) ,//控制x方向大小
+				})
+				if($(this).attr("data-value") == "h_f_c_z"){
+					window.location.href = "phone.html";
+				}else{
+					shu_ju_xuan_ran($(this).attr("data-value"));
+				}
+			});
+			//数据渲染
+			function shu_ju_xuan_ran(shangPinType){
+				$.ajax({
+					url:"http://172.16.7.179:8080/api/token/shangPins",
+				// 	url:"http://106.15.56.132:8765/api/token/shangPins",
+					type: "POST",
+					async: false,
+					data:{"shangPinType":shangPinType},
+					dataType:'json',
+					success:function(result){
+						if(result.code == 0){
+							var bei_jing = 1;
+							var str = "";
+							var str_zhi_ding = "";
+							var str_huo_dong = "";
+							var str_huo_dong_zhi_ding = "";
+							for(var i = 0;i < result.value.length;i++){
+							    if(result.value[i].shiFouShangJia == 1){
+									if(huo_dong(result.value[i].huoDongId) != null){
+										if(result.value[i].shiFouZhiDong == 1){
+											str_huo_dong_zhi_ding += '<div class="shangpins_zhu_ti-shang-pin-zi bei-jing-'+bei_jing+'"><div class="shangpins_zhu_ti-shang-pin-zi-bei-jing"></div><div class="shangpins_zhu_ti-shang-pin-zi-img"><img src="'+imgUrl(result.value[i].acShangPinTuPian)+'" /></div><div class="shangpins_zhu_ti-shang-pin-zi-name-buttom"">'+manJian(result.value[i].shangPinName,result.value[i].huoDongId)+'</div><div class="shangpins_zhu_ti-shang-pin-zi-li-ji-qiang" data-type="'+result.value[i].duiJeiLeiXing+'" data-value="'+result.value[i].id+'">立即抢</div></div>';
+										}else{
+											str_huo_dong += '<div class="shangpins_zhu_ti-shang-pin-zi bei-jing-'+bei_jing+'"><div class="shangpins_zhu_ti-shang-pin-zi-bei-jing"></div><div class="shangpins_zhu_ti-shang-pin-zi-img"><img src="'+imgUrl(result.value[i].acShangPinTuPian)+'" /></div><div class="shangpins_zhu_ti-shang-pin-zi-name-buttom"">'+manJian(result.value[i].shangPinName,result.value[i].huoDongId)+'</div><div class="shangpins_zhu_ti-shang-pin-zi-li-ji-qiang" data-type="'+result.value[i].duiJeiLeiXing+'" data-value="'+result.value[i].id+'">立即抢</div></div>';
+										}
+									}else{
+										if(result.value[i].shiFouZhiDong == 1){
+											str_zhi_ding += '<div class="shangpins_zhu_ti-shang-pin-zi bei-jing-'+bei_jing+'"><div class="shangpins_zhu_ti-shang-pin-zi-bei-jing"></div><div class="shangpins_zhu_ti-shang-pin-zi-img"><img src="'+imgUrl(result.value[i].acShangPinTuPian)+'" /></div><div class="shangpins_zhu_ti-shang-pin-zi-name-buttom"">'+manJian(result.value[i].shangPinName,result.value[i].huoDongId)+'</div><div class="shangpins_zhu_ti-shang-pin-zi-li-ji-qiang" data-type="'+result.value[i].duiJeiLeiXing+'" data-value="'+result.value[i].id+'">立即抢</div></div>';
+										}else{
+											str += '<div class="shangpins_zhu_ti-shang-pin-zi bei-jing-'+bei_jing+'"><div class="shangpins_zhu_ti-shang-pin-zi-bei-jing"></div><div class="shangpins_zhu_ti-shang-pin-zi-img"><img src="'+imgUrl(result.value[i].acShangPinTuPian)+'" /></div><div class="shangpins_zhu_ti-shang-pin-zi-name-buttom"">'+manJian(result.value[i].shangPinName,result.value[i].huoDongId)+'</div><div class="shangpins_zhu_ti-shang-pin-zi-li-ji-qiang" data-type="'+result.value[i].duiJeiLeiXing+'" data-value="'+result.value[i].id+'">立即抢</div></div>';
+										}
+									}
+    								if(bei_jing >= 4){
+    									bei_jing = 0;
+    								}
+    								bei_jing++;
+							    }
+							}
+							$(".shangpins_zhu_ti_xuan-ran").html(str_huo_dong_zhi_ding+str_huo_dong+str_zhi_ding+str+"<div style='height: 20px;'></div>");
+						}else{
+							layer.msg("服务器响应失败请联系管理员");
+						}
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				});
+			}
+			//查询活动详情
+			function huo_dong(id){
+				var huo_dong_name = "";
+				$.ajax({
+					url:"http://172.16.7.179:8080/api/token/huoDongQuaner",
+				// 	url:"http://106.15.56.132:8765/api/token/huoDongQuaner",
+					type: "POST",
+					async: false,
+					data:{"id":id},
+					dataType:'json',
+					success:function(result){
+						if(result.code == 0){
+						    if(result.value != null){
+						        huo_dong_name = result.value.name;
+						    }else{
+						        huo_dong_name = null;
+						    }
+							
+						}else{
+							layer.msg("服务器响应失败请联系管理员");
+						}
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				});
+				return huo_dong_name;
+			}
+			var shangPinSId = GetRequest().shangPinSId;
+			var shangPinSkuId = GetRequest().shangPinSkuId;
+			var huoDongId;
+			$.ajax({
+				url:"http://172.16.7.179:8080/api/token/shangXianHuoDong",
+			// 	url:"http://106.15.56.132:8765/api/token/shangXianHuoDong",
+				type: "POST",
+				async: false,
+				dataType:'json',
+				success:function(result){
+					if(result.code == 0){
+					    if(result.value.length > 0){
+					        huoDongId = result.value[0].id;
+					        var zhuang_tai = huo_dong(result.value[0].id);
+					    }
+					}else{
+					layer.msg("服务器响应失败请联系管理员");
+					}
+				},error:function(result){
+					layer.msg("服务器响应失败请联系管理员");
+				}
+			});
+			//点击立即抢
+			$('body').on("click",".shangpins_zhu_ti-shang-pin-zi-li-ji-qiang",function(){
+				if($(this).attr("data-type") == "直充类"){
+					window.location.href = "member.html?id="+$(this).attr("data-value")+"&&huoDongId="+huoDongId+"&&shangPinSId="+$(this).attr("data-value")+"&&shangPinSkuId="+shangPinSkuId;
+				}else if($(this).attr("data-type") == "卡券类"){
+					window.location.href = "dzkq.html?id="+$(this).attr("data-value")+"&&huoDongId="+huoDongId+"&&shangPinSId="+$(this).attr("data-value")+"&&shangPinSkuId="+shangPinSkuId;
+				}
+			});
+			$(".shangpins_zhu_ti-dao-hang-zi_xia_biao_zi").css("width",$(".shangpins_zhu_ti-dao-hang-zi-text").css("width"));
+			var zhu_ti_bottom = parseInt($(".shangpins_zhu_ti-dao-hang-zi").css("width")) - parseInt($(".shangpins_zhu_ti-dao-hang-zi-text").css("width"));
+			var zhu_ti_ju_li = zhu_ti_bottom / 2;
+			$(".shangpins_zhu_ti-dao-hang-zi_xia_biao_zi").css("margin-left",zhu_ti_ju_li+"px");
+		</script>
+	</body>
+</html>

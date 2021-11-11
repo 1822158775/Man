@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>活动专区</title>		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<script src="./js/jquery-3.5.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layui-v2.6.8/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/gongju.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/huo_dong.css"/>
+		<style>
+			body{
+				overflow:hidden;
+				width: 100%;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="jia_zai_zhong">
+			<div class="jia_zai_zhong_all">
+				<div class="jia_zai_zhong_img">
+					<img src="./img/jia_zai_zhong.png" />
+				</div>
+				<div class="jia_zai_zhong_text">
+					<div class="loader-inner ball-beat">
+					  <div></div>
+					  <div></div>
+					  <div></div>
+					</div>
+					
+					<div class="loader-inner ball-beat" style="margin-left: 5px;">
+					  <div></div>
+					  <div></div>
+					  <div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mask"></div>
+		<div class="">
+			
+		</div>
+		<div id="app">
+			<div class="huo_dong_zhu_ti">
+				<div class="shangpins_zhu_ti-my-order">
+					<div class="shangpins_zhu_ti-my-order-img">
+						<img src="./img/my-order.png" />
+					</div>
+					<div class="shangpins_zhu_ti-my-order-text">
+						我的订单
+					</div>
+				</div>
+				<div class="huo_dong_zhu_ti-bei_jing">
+					<img src="img/shangpins-beijing.png" />
+				</div>
+				<div class="huo_zhong_zhong_jian">				
+					<!-- 活动规则 -->
+					<div class="huo_dong_zhu_ti-one">
+						<div class="huo_dong_zhu_ti-huo_dong_gui_ze">
+							<div class="huo_dong_zhu_ti-huo_dong_gui_ze-title">
+								活动规则
+							</div>
+							<div class="huo_dong_zhu_ti-huo_dong_gui_ze-title_one">
+								-活动对象-
+							</div>
+							<div class="huo_dong_zhu_ti-huo_dong_gui_ze-type">
+								中信银行上海分行发薪客户
+							</div>
+							<div class="huo_dong_zhu_ti-huo_dong_gui_ze-age">
+								-活动内容-
+							</div>
+							<div class="huo_dong_zhu_ti-huo_dong_gui_ze-age_one">
+								发薪客户每周三可参与优惠1元购活动，每周总限量1500份，每人每周最多领取1份，先到先得，购完即止。（限中信银行借记卡）
+							</div>
+							<div class="huo_dong_zhu_ti-huo_dong_gui_ze-time">
+								-活动时间-
+							</div>
+							<div class="huo_dong_zhu_ti-huo_dong_gui_ze-time_one">
+								2021年10月1日-2021年12月31日
+							</div>
+							<div class="dian_ji_cha_kan_gui_ze">
+								点击查看规则
+							</div>
+							<div class="huo_dong_ming_e_jin_du_tiao">
+								<div class="huo_dong_ming_e_jin_du_tiao-text">
+									先到先得！已抢&nbsp;<span class="huo_dong_ming_e_jin_du_tiao-baifen">0%</span>
+								</div>
+								<div class="huo_dong_ming_e_jin_du_tiao-bei_jing">
+									<div class="container">
+										<div class="container_kong_zhi">
+											<div class="warning"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 高端客户专项 -->
+					<!-- 本周福利 -->
+					<div class="huo_dong_zhu_ti-there">
+						<div class="huo_dong_zhu_ti-huo_dong_gui_ze-title">
+							本周福利
+						</div>
+						<div class="shu_ju_s">
+							<div class="zhuan_qu">
+							</div>			
+						</div>
+					</div>
+					<div class="huo_dong_zhu_ti-there">
+						<div class="huo_dong_zhu_ti-huo_dong_gui_ze-title">
+							打开有礼
+						</div>
+						<div class="huo_dong_zhu_ti-huo_dong_gui_ze-txt">
+							完成以下任务，可额外获得一次领取一分付福利的机会。
+						</div>
+						<div class="huo_dong_zhu_ti-huo_dong_gui_ze-fen_qian">
+							<div class="huo_dong_zhu_ti-huo_dong_gui_ze-fen_qian_hui_w">
+								<div class="huo_dong_zhu_ti-huo_dong_gui_ze-fen_qian_hui_w_wen_zi">
+									
+								</div>
+								<div class="huo_dong_zhu_ti-huo_dong_gui_ze-fen_qian_hui_w_da_ka wei_da_ka">
+									<img src="./img/ai_xin_b.png"/><div style="width: 3px;"></div>打卡
+								</div>
+								<div class="huo_dong_zhu_ti-huo_dong_gui_ze-fen_qian_hui_w_da_ka yi_da_ka">
+									<img src="./img/shi_xin_b.png"/><div style="width: 3px;"></div>已打卡
+								</div>
+							</div>
+							<div class="huo_dong_zhu_ti-huo_dong_gui_ze-fen_qian_hui"></div>
+							<div class="huo_dong_zhu_ti-huo_dong_gui_ze-fen_qian_hui_s">
+								分享给朋友
+								<div class="huo_dong_zhu_ti-huo_dong_gui_ze-fen_qian_hui_s_fen_xiang fen_xiang">
+									<img src="./img/ai_xin_h.png"/><div style="width: 3px;"></div>分享
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="shangpins_zhu_ti-di_bu">
+						<div class="shangpins_zhu_ti-di_bu_1">
+							<div class="shangpins_zhu_ti-di_bu_tiao">
+								
+							</div>
+							<div class="shangpins_zhu_ti-di_bu_tiao">
+								
+							</div>
+						</div>
+						<div class="shangpins_zhu_ti-di_bu_2">
+							本页面商品由上海彰迅提供
+						</div>
+					</div>
+					<img id="img1" src="./img/tanchu_beijing.png" style="display: none;"/>
+				</div>
+			</div>
+		</div>
+		<script src="./js/TweenMax.min.js"></script>
+		<script src="https://lycffotc.test.bank.ecitic.com:2443/NMBFOServer/MobileBankWeb/static/js/jssdk.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var zhuan_qu_map = new Map;
+			var cun_zai_zhuan_qu_map = new Map;
+			// 点击跳转到我的订单
+			$(".shangpins_zhu_ti-my-order").click(function(){
+				window.location.href = "myorder.html";
+			});
+			//查询所有专区
+			$.ajax({
+				url:"http://172.16.7.179:8080/api/token/zhuanQu",
+				// url:"http://106.15.56.132:8765/api/token/zhuanQu",
+				type: "POST",
+				async: false,
+				dataType:'json',
+				success:function(result){
+					var bei_jing_tu_pian = 0;
+					if(result.code == 0){
+						for(var i = 0;i < result.value.length;i++){
+							var zhuan = result.value[i];
+							var zhuanJSON = {
+								"id":zhuan.id,
+								"name":zhuan.name
+							}
+							zhuan_qu_map.set(zhuan.id,zhuanJSON);
+							
+						}
+					}else{
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				},error:function(result){
+					layer.msg("服务器响应失败请联系管理员");
+				}
+			});
+			//活动渲染
+			function shu_ju_xuan_ran(id){
+				$.ajax({
+					url:"http://172.16.7.179:8080/api/token/huoDongShangPin",
+				// 	url:"http://106.15.56.132:8765/api/token/huoDongShangPin",
+					type: "POST",
+					async: false,
+					data:{"huoDongId":id},
+					dataType:'json',
+					success:function(result){
+						var bei_jing_tu_pian = 1;
+						if(result.code == 0){
+							for(var i = 0;i < result.value.length;i++){
+								var zJSON = result.value[i];
+								if(cun_zai_zhuan_qu_map.get(zJSON.zhuanQuId) == null){
+									$(".shu_ju_s").append('<div class="zhuan_qu'+zJSON.zhuanQuId+'"></div>');
+									$(".zhuan_qu"+zJSON.zhuanQuId).append('<div class="huo_dong_zhu_ti-huo_dong_gui_ze-zhuan_qu"><div class="huo_dong_zhu_ti-huo_dong_gui_ze-zhuan_qu-img" style="margin-right: 27px;"><img src="./img/zuo.png" /></div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-zhuan_qu-text">'+zhuan_qu_map.get(zJSON.zhuanQuId).name+'</div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-zhuan_qu-img" style="margin-left: 27px;"><img src="./img/you.png" /></div></div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju'+zJSON.zhuanQuId+'"></div>')
+								}
+								if(zJSON.shangPinJinDuTiao != null && zJSON.shangPinJinDuTiao != -1 && zJSON.shangPinJinDuTiao.length >= 0){
+									$(".huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju"+zJSON.zhuanQuId).append('<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi"><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi-bei_jing"><img src="./img/bei_jing_'+bei_jing_tu_pian+'.png" /></div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_img"><img src="'+imgUrl(zJSON.imgage)+'" /></div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_title">'+zJSON.shangPinName+zJSON.sku+'</div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_button" data-huo_dong_id='+zJSON.huoDongId+' data-shang_pin_s_id='+zJSON.shangPinSId+' data-shang_pin_sku_id='+zJSON.shangPinSkuId+' data-type='+zJSON.type+'>马上抢</div><div class="number-pb"><div class="number-pb-bei"></div><div class="number-pb-jindutiao" style="width:'+zJSON.shangPinJinDuTiao+'%;"><div class="number-pb-shown"></div><div class="number-pb-num"></div></div></div></div>');
+								}else{
+									$(".huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju"+zJSON.zhuanQuId).append('<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi"><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi-bei_jing"><img src="./img/bei_jing_'+bei_jing_tu_pian+'.png" /></div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_img"><img src="'+imgUrl(zJSON.imgage)+'" /></div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_title">'+zJSON.shangPinName+zJSON.sku+'</div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_button" data-huo_dong_id='+zJSON.huoDongId+' data-shang_pin_s_id='+zJSON.shangPinSId+' data-shang_pin_sku_id='+zJSON.shangPinSkuId+' data-type='+zJSON.type+'>马上抢</div><div class="number-pb"><div class="number-pb-bei"></div><div class="number-pb-jindutiao" style="width:'+Math.trunc(((zJSON.zongMingE - zJSON.mingE) / zJSON.zongMingE) * 100)+'%;"><div class="number-pb-shown"></div><div class="number-pb-num"></div></div></div></div>');
+								}
+								cun_zai_zhuan_qu_map.set(zJSON.zhuanQuId,"ok");
+								if(bei_jing_tu_pian >= 8){
+								    bei_jing_tu_pian = 1;
+								}else{
+							        bei_jing_tu_pian++;
+								}
+							}
+						}else{
+							layer.msg("服务器响应失败请联系管理员");
+						}
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				});
+			}
+			//查询活动详情
+			function huo_dong(id){
+				$.ajax({
+					url:"http://172.16.7.179:8080/api/token/huoDongQuaner",
+				// 	url:"http://106.15.56.132:8765/api/token/huoDongQuaner",
+					type: "POST",
+					async: false,
+					data:{"id":id},
+					dataType:'json',
+					success:function(result){
+						var bei_jing_tu_pian = 0;
+						if(result.code == 0){
+							if(result.value.huoDongZhuangTai == 0){
+								if(result.value.huoDongJinDuTiao == null || result.value.huoDongJinDuTiao == -1 || result.value.huoDongJinDuTiao.length <= 0){
+									var num = (result.value.huoDongZongMingE - result.value.huoDongMingE) / result.value.huoDongZongMingE;
+									$(".huo_dong_ming_e_jin_du_tiao-baifen").html(Math.trunc(100 * num)+"%");
+									$(".container_kong_zhi").css("width",Math.trunc(100 * num)+"%");
+									shu_ju_xuan_ran(id);
+								}else{
+									$(".huo_dong_ming_e_jin_du_tiao-baifen").html(result.value.huoDongJinDuTiao+"%");
+									$(".container_kong_zhi").css("width",result.value.huoDongJinDuTiao+"%");
+									shu_ju_xuan_ran(id);
+								}
+							}
+						}else{
+							layer.msg("服务器响应失败请联系管理员");
+						}
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				});
+			}
+			var huo_dong_id = 0;
+			$.ajax({
+				url:"http://172.16.7.179:8080/api/token/shangXianHuoDong",
+				type: "POST",
+				async: false,
+				dataType:'json',
+				success:function(result){
+					if(result.code == 0){
+						huo_dong_id = result.value[0].id;
+            		    huo_dong(result.value[0].id);
+					}else{
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				},error:function(result){
+					layer.msg("服务器响应失败请联系管理员");
+				}
+			});
+			//点击立即抢
+			$("body").on("click",".huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_button",function(){
+				if($(this).attr("data-type") == "直充类"){
+					$("#app").css("filter","blur(5px)");
+					// window.location.href = "member.html?huoDongId="+$(this).attr("data-huo_dong_id")+"&&shangPinSId="+$(this).attr("data-shang_pin_s_id")+"&&shangPinSkuId="+$(this).attr("data-shang_pin_sku_id")+"&&type="+$(this).attr("data-type");
+				}else if($(this).attr("data-type") == "卡券类"){
+					$("#app").css("filter","blur(5px)");
+					// window.location.href = "dzkq.html?huoDongId="+$(this).attr("data-huo_dong_id")+"&&shangPinSId="+$(this).attr("data-shang_pin_s_id")+"&&shangPinSkuId="+$(this).attr("data-shang_pin_sku_id")+"&&type="+$(this).attr("data-type");
+				}
+			});
+			//点击查看规则
+			$(".dian_ji_cha_kan_gui_ze").click(function(){
+    			// 打印
+    			//页面层-自定义
+    			layer.open({
+    			  type: 1,
+    			  title: false,
+    			  closeBtn: 0,
+    			  shadeClose: true,
+    			  skin: 'yourclass',
+    			  content: '<div class="title_text" style="margin-top:'+2364 * 0.07+'px;">活动细则</div><div class="wenan" style="margin-top:'+2364 * 0.099+'px;width:'+1123 * 0.20+'px;margin-left:'+1123 * 0.025+'px;"><div class="wenan_text" style="height:'+2364 * 0.11+'px;margin-bottom:'+2364 * 0.001+'px;">1、活动时间<br>2021年10月20日-12月31日<br><br>2、活动对象<br>（1）代发新客户（实际入账后）从次周三起连续每周可领取一次权益，连续6周；<br>（2）代发存量客户（T-1月有代发记录），每个月可领取一次权益。<br><br>3、活动内容<br>活动期间，活动对象可在每周三可参与薪享1元购活动，客户可花费1元超值的活动商品，活动商品包括视听会员、话费充值、美食餐饮、生活服务等多项种类及产品，并且部分商品还将参与“一分付”的的活动，活动数量有限，每人每周最多领取1份，先到先得，购完即止。<br><br>4、奖品说明<br>奖品种类包括视听会员、话费充值、美食餐饮、生活服务等，客户可在【薪选1元购】活动页面，查看当期可领取的福利商品，并在“我的订单”中查看已购买的商品，并可查看使用方式等详细信息。<br><br>5、其他说明<br>（1）活动过程中，如有所持银行卡被停用或管制，违反国家法律法规、采用不正但手段参与活动等任一情况的客户，中信银行有权取消其参与活动的资格，收回已发放的奖品。<br>（2）在法律允许的范围内，中信银行对该活动有最终解释权。<br></div><div class="queren"><div class="queren_text">确&nbsp;&nbsp;&nbsp;认</div><img src="./img/duibi.png"></div></div>'
+    			});
+			});
+			$("body").on("click",".queren",function(){
+				$(".layui-layer-shade").click();
+			});
+			//点击进行分享
+			$(".fen_xiang").click(function(){
+				if (window.bridgeReady && window.bank && window.bank.sharePlugin) {
+				  window.bank.sharePlugin.share({
+				      //平台，微信好友、微信朋友圈
+				      platforms: ['Wechat', 'WechatMoments'],
+				      //类型
+				      shareType: 'webpage',
+				      //分享标题
+				      title: '中信银行卡超市',
+				      //分享描述
+				      description: '丰富权益服务的借机卡/信用卡供您选择',
+				      //分享链接
+				      webpageUrl: 'http://eciticdev.yuanzhuli.net/?site=atity&ctl=cardMarket&act=index&yj_id=17_user6551574a7e5b6ff5',
+				      //缩略图URL（可选）
+				      thumbUrl: 'https://activityres.jhm2012.com/pics/1117288392.jpg'
+				    },
+				    function (result) {
+				      //成功回调
+					  $.ajax({
+					  	url:"http://172.16.7.179:8080/api/token/fenXiangTianJia",
+					  	type: "POST",
+						data: {
+							"uId": localStorage.getItem("userId"),
+							"huoDongId": huo_dong_id
+						},
+					  	async: false,
+					  	dataType:'json',
+					  	success:function(result){
+					  		if(result.code == 0){
+					  			alert("分享成功，您获得一次一分付专区参与活动的机会。");
+					  		}else{
+					  			layer.msg("分享成功");
+					  		}
+					  	},error:function(result){
+					  		layer.msg("服务器响应失败请联系管理员");
+					  	}
+					  });
+				    },
+				    function (error) {
+				      //失败回调
+					  layer.msg("分享失败");
+				    })
+				}
+			});
+			//点击进行签到
+			$(".wei_da_ka").click(function(){
+				$.ajax({
+					url:"http://172.16.7.179:8080/api/token/qianDaoTianJia",
+					type: "POST",
+					data: {
+						"userId": localStorage.getItem("userId"),
+						"huoDongId": huo_dong_id
+					},
+					async: false,
+					dataType:'json',
+					success:function(result){
+						var qian_dao = da_ka_zhuang_tai();
+						if(qian_dao == 2){
+							alert("签到成功，您获得一次一分付专区参与活动的机会。")
+						}else{
+							layer.msg(result.value);
+						}
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				});
+			});
+			function da_ka_zhuang_tai(){
+				var da_ka_tian_shu = 0;
+				$.ajax({
+					url:"http://172.16.7.179:8080/api/token/qianDaoChaXun",
+					type: "POST",
+					data: {
+						"userId": localStorage.getItem("userId"),
+						"huoDongId": huo_dong_id
+					},
+					async: false,
+					dataType:'json',
+					success:function(result){
+						if(result.value.length > 0){
+							if(result.value[0].daKaOne == "Y"){
+								da_ka_tian_shu++;
+							}
+							if(result.value[0].daKaTwo == "Y"){
+								da_ka_tian_shu++;
+							}
+							if(da_ka_tian_shu == 2){
+								$(".wei_da_ka").css("display","none");
+								$(".yi_da_ka").css("display","flex");
+							}else{
+								var is_today = isToday(result.value[0].daKaOneData);
+								if(is_today == true){
+									$(".wei_da_ka").css("display","none");
+									$(".yi_da_ka").css("display","flex");
+								}else{
+									$(".wei_da_ka").css("display","flex");
+									$(".yi_da_ka").css("display","none");
+								}
+							}
+						}
+						$(".huo_dong_zhu_ti-huo_dong_gui_ze-fen_qian_hui_w_wen_zi").html("累积打卡两天（"+da_ka_tian_shu+"/2）");
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				});
+				return da_ka_tian_shu;
+			}
+			da_ka_zhuang_tai();
+			//提示用户请勿重复打卡
+			$(".yi_da_ka").click(function(){
+				layer.msg("请勿重复打卡");
+			});
+		</script>
+	</body>
+</html>

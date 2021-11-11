@@ -1,0 +1,52 @@
+
+
+
+
+.header,
+.footer {
+	line-height: 1.2rem;
+	background: #58bc58;
+	text-align: center;
+	font-size: .533333rem;
+	color: #fff;
+}
+
+#wrapper {
+	flex: 1;
+	overflow: hidden;
+}
+
+p {
+	color: #fff;
+	text-align: center;
+	font-size: .40625rem;
+	line-height: 1.25rem;
+}
+
+ul {
+	background: #fff;
+	font-size: .4rem;
+	position: relative;
+}
+
+.pullDown {
+	position: absolute;
+	top: -1.25rem;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+.pullUp {
+	position: absolute;
+	bottom: -1.25rem;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+li {
+	line-height: .46875rem;
+	padding: .3125rem;
+	color: #000;
+}

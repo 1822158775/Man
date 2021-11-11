@@ -1,0 +1,187 @@
+.shangpins_zhu_ti{
+	position: relative;
+	max-width: 700px;
+	margin: auto;
+	overflow: hidden;
+	overflow-y: auto;
+	height: 100vh;
+}
+.shangpins_zhu_ti-bei-jing{
+	width: 100%;
+	max-height: 200px;
+	position: absolute;
+	z-index: -1;
+	overflow: hidden;
+}
+.shangpins_zhu_ti-bei-jing img{
+	width: 100%;
+	height: 100%;
+}
+.shangpins_zhu_ti-dao-hang{
+	width: 92%;
+	height: 89px;
+	opacity: 1;
+	background: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16); 
+	position: absolute;
+	top: 170px;
+	left: 4%;
+	display: flex;
+}
+.shangpins_zhu_ti-dao-hang-zi{
+	width: 100%;
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+}
+.shangpins_zhu_ti-dao-hang-zi-img{
+	position: absolute;
+}
+.shangpins_zhu_ti-dao-hang-zi-text{
+	position: absolute;
+	height: 20px;
+	opacity: 1;
+	font-size: 15px;
+	font-weight: 400;
+	text-align: center;
+	color: #000000;
+	top: 52px;
+}
+.shangpins_zhu_ti-shang-pin{
+	left: 4%;
+	width: 92%;
+	opacity: 1;
+	background: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16); 
+	position: absolute;
+	top: 275px;
+}
+.shangpins_zhu_ti-shang-pin-zi{
+	height: 83px;
+	opacity: 1;
+	background: #e0eaff;
+	border-radius: 12px;
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16); 
+	margin: 19px 6% 0px;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.shangpins_zhu_ti-shang-pin-zi-img{
+	position: absolute;
+	left: 15px;
+}
+.shangpins_zhu_ti-shang-pin-zi-img img{
+	width: 37px;
+	height: 37px;
+	opacity: 1;
+	background: #ffffff;
+	border-radius: 50%;
+}
+.shangpins_zhu_ti-shang-pin-zi-name-buttom{
+	position: absolute;
+	left: 63px;
+}
+.shangpins_zhu_ti-shang-pin-zi-name{
+	height: 20px;
+	opacity: 1;
+	font-size: 15px;
+	font-weight: 400;
+	text-align: left;
+	color: #000000;
+}
+.shangpins_zhu_ti-shang-pin-zi-buttom{
+	height: 14px;
+	opacity: 1;
+	font-size: 10px;
+	font-weight: 400;
+	text-align: left;
+	color: #ffffff;
+	height: 18px;
+	background: #e84551;
+	padding: 2px 14px;
+	border-radius: 20px;
+	margin-top: 5px;
+	position: absolute;
+}
+.shangpins_zhu_ti-shang-pin-zi-li-ji-qiang{
+	position: absolute;
+	right: 16px;
+	padding: 7px 22px;
+	background: #ffffff;
+	opacity: 1;
+	font-size: 15px;
+	font-weight: 700;
+	text-align: center;
+	color: #d64f49;
+	border-radius: 20px;
+}
+.bei-jing-1{
+	background: #e0eaff;
+}
+.bei-jing-2{
+	background: #e1f5e8; 
+}
+.bei-jing-3{
+	background: #fff9e0;
+}
+.bei-jing-4{
+	background: #ffedea; 
+}
+.shangpins_zhu_ti-shang-pin-zi-bei-jing{
+	
+}
+.shangpins_zhu_ti-my-order{
+	width: 68px;
+	height: 68px;
+	opacity: 1;
+	background: #ffffff;
+	border-radius: 50%;
+	box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.16); 
+	position: fixed;
+	z-index: 2;
+	right: 4%;
+	top: 50%;
+}
+.shangpins_zhu_ti-my-order-text{
+	height: 16px;
+	opacity: 1;
+	font-size: 12px;
+	font-weight: 400;
+	text-align: center;
+	color: #333333;
+}
+.shangpins_zhu_ti-my-order{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.shangpins_zhu_ti-my-order-img{
+	margin-top: 11px;
+}
+.shangpins_zhu_ti-my-order-text{
+	margin-top: 2px;
+}
+.shangpins_zhu_ti-my-order-img img{
+	width: 23px;
+	height: 27px;
+}
+.shangpins_zhu_ti-shang-pin-zi-name{
+	width: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.shangpins_zhu_ti-dao-hang-zi_xia_biao{
+	position: absolute;
+	bottom: 13px;
+	width: 100%;
+	height: 3px;
+}
+.shangpins_zhu_ti-dao-hang-zi_xia_biao_zi{
+	height: 3px;
+	background-color: #9e9e9e;
+	border-radius: 20px;
+}

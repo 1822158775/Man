@@ -1,0 +1,185 @@
+.dzkq-zhuti{
+	position: relative;
+	max-width: 700px;
+	margin: auto;
+	overflow-y: auto;
+	height: 100vh;
+}
+.dzkq-beijing{
+	width: 100%;
+	max-height: 200px;
+	position: absolute;
+	z-index: -1;
+	overflow: hidden;
+}
+.dzkq-beijing img{
+	width: 100%;
+}
+.dzkq-txt{
+	position: absolute;
+	top: 170px;
+	opacity: 1;
+	background: #ffffff;
+	border-radius: 20px;
+	width: 100%;
+	min-height: 200px;
+}
+.dzkq-txt-title{
+	position: absolute;
+	top: 26px;
+	left: 22px;
+	opacity: 1;
+	font-size: 17px;
+	font-weight: 800;
+	text-align: center;
+	color: #000000;
+}
+.dzkq-jine{
+	margin-top: 61px;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.dzkq-jine-botton{
+	line-height: 77px;
+	width: 100%;
+	max-width: 108px;
+	text-align: center;
+	height: 77px;
+	opacity: 1;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16); 
+	opacity: 1;
+	font-size: 17px;
+	font-weight: 700;
+	text-align: center;
+	color: #000000;
+	position: relative;
+	margin-top: 10px;
+}
+.ac{
+	opacity: 1;
+	background: linear-gradient(90deg,#f7df7d, #fce48a);
+	border-radius: 5px;
+}
+.dzkq-input-two-tao-can-img{
+	display: none;
+}
+
+.ac .dzkq-input-two-tao-can-img{
+	display: block;
+}
+.ac .dzkq-input-two-tao-can-img img{
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	right: 6px;
+	bottom: 5px;
+}
+.dzkq-shang-pin-jian-jei{
+	margin-top: 30px;
+	width: 100%;
+}
+.dzkq-shang-pin-jian-jei-17,.dzkq-shang-pin-jian-jei-17-2{
+	position: absolute;
+	width: 4px;
+	height: 16px;
+	opacity: 1;
+	background: #d64f49;
+	left: 16px;
+}
+.dzkq-shang-pin-jian-jei-txt,.dzkq-shang-pin-jian-jei-txt2{
+	position: absolute;
+	opacity: 1;
+	font-size: 17px;
+	font-weight: 700;
+	color: #000000;
+	left: 29px;
+	line-height: 15px;
+}
+.dzkq-shang-pin-jian-jei-age,.dzkq-shang-pin-jian-jei-age-2{
+	top: 25px;
+	opacity: 1;
+	font-size: 10px;
+	font-weight: 400;
+	text-align: left;
+	color: #666666;
+	line-height: 20px;
+	margin-left: 18px;
+	margin-right: 12px;
+}
+.dzkq-input-two-tao-shuo-ming-ke-fu,.dzkq-input-two-tao-shuo-ming-ke-fu *{
+	margin-top: 32px;
+	opacity: 1;
+	font-size: 12px;
+	font-weight: 400;
+	color: #333333;
+	width: 100%;
+	text-align: center;
+}
+.dzkq-shang-pin-jian-jei-1-title,.dzkq-shang-pin-jian-jei-2-title{
+	position: relative;
+	height: 22px;
+}
+.dzkq-shang-pin-jian-jei-2,.dzkq-shang-pin-jian-jei-1{
+	position: relative;
+}
+.dzkq-shang-pin-jian-jei-2{
+	margin-top: 20px;
+}
+.dzkq-button{
+	width: 100%;
+	height: 64px;
+	opacity: 1;
+	position: fixed;
+	bottom: 0px;
+	max-width: 700px;
+}
+.dzkq-button-one{
+	margin: auto;
+	margin-top: 10px;
+	height: 44px;
+	opacity: 1;
+	background: #d64f49;
+	border: 1px solid #d64f49;
+	border-radius: 23px;
+	width: 92%;
+	opacity: 1;
+	font-size: 17px;
+	font-weight: 700;
+	text-align: center;
+	color: #ffffff;
+	line-height: 44px;
+}
+.tao_can_kuai_name{
+	height: 20px;
+}
+.tao_can_kuai_jia_ge{
+	height: 12px;
+	opacity: 1;
+	font-size: 12px;
+	font-weight: 300;
+	text-align: center;
+	color: #848484;
+}
+.sthy-input-two-tao-can-huo-dong{
+	position: absolute;
+	height: 14px;
+	opacity: 1;
+	font-size: 10px;
+	font-weight: 400;
+	text-align: center;
+	color: #fde291;
+	right: 0px;
+	top: 0px;
+	line-height: 17px;
+	width: 49px;
+	height: 17px;
+	opacity: 1;
+	background: #493d23;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
