@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<title>兑换话费</title>
+		<script src="./js/jquery-3.5.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="./js/qrcode.js" type="text/javascript" charset="utf-8"></script> -->
+		<script src="js/gongju.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layui-v2.6.8/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/phone.css"/>
+		
+    <style type="text/css" media="all">
+        body{
+            overflow:hidden;
+            width: 100%;
+            height: 184px;
+	        background: linear-gradient(180deg,#3babf5 0%, #f5f6fa 100%) no-repeat;
+        }
+        .sieam{
+            position: fixed;
+        }
+        #app{
+            position: fixed;
+        }
+    </style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="bg-img">
+				<div class="phone-zhuti">
+					<div class="phone-title while-color">
+						手机号
+					</div>
+					<!-- 充值手机号 -->
+					<div class="phone-input">
+						<input type="text" name="phone" placeholder="请输入手机号" id="phone" value="" maxlength="11"  autocomplete="off" onkeyup = "value=value.replace(/[^\d]/g,'')"/>
+					</div>
+					<!-- 充值金额 -->
+					<div class="phone-amount">
+						<div class="phone-amount-one">
+							<div class="phone-amount-one-one ac" data-value="0.01">
+								<!-- <div class="youshangjiao">
+									<div class="youshangjiao-one">
+										购买
+									</div>
+								</div> -->
+								<span>30</span><span class="danwei">元</span>
+							</div>
+							<div class="phone-amount-one-one" data-value="50">
+								<!-- <div class="youshangjiao">
+									<div class="youshangjiao-one">
+										购买
+									</div>
+								</div> -->
+								<span>50</span><span class="danwei">元</span>
+							</div>
+							<div class="phone-amount-one-one" data-value="100">
+								<!-- <div class="youshangjiao">
+									<div class="youshangjiao-one">
+										购买
+									</div>
+								</div> -->
+								<span>100</span><span class="danwei">元</span>
+							</div>
+						</div>
+						<div class="phone-amount-one phone-amount-two">
+							<div class="phone-amount-one-one" data-value="200">
+								<!-- <div class="youshangjiao">
+									<div class="youshangjiao-one">
+										购买
+									</div>
+								</div> -->
+								<span>200</span><span class="danwei">元</span>
+							</div>
+							<div class="phone-amount-one-one" data-value="300">
+								<!-- <div class="youshangjiao">
+									<div class="youshangjiao-one">
+										购买
+									</div>
+								</div> -->
+								<span>300</span><span class="danwei">元</span>
+							</div>
+							<div class="phone-amount-one-one" data-value="500">
+								<!-- <div class="youshangjiao">
+									<div class="youshangjiao-one">
+										购买
+									</div>
+								</div> -->
+								<span>500</span><span class="danwei">元</span>
+							</div>
+						</div>
+					</div>
+					<!-- 活动说明 -->
+					<div class="phone-txt">
+						<span>活动说明</span><br>
+						<span>(1)			话费充充充，优享日可免费领取最高50元话费</span><br>
+						<span>(2)			充值话费，最快5-10分钟到账，到账后将有短信通知，月初/月底运营商繁忙，到账时间可能存在推迟的情况</span><br>
+						<span>(3)			活动最终解释权，归中信银行上海分行所有。</span>
+					</div>
+					<!-- 联系客服 -->
+					<div class="phone-tel">
+						联系客服：<a href="tel: 400-006-7720" style="color: black;">400-006-7720</a>
+					</div>
+				</div>
+			</div>
+    		<!-- 提交购买 -->
+    		<div class="sieam">
+    			<div class="sieam-goumai">
+    				立即购买
+    			</div>
+    		</div>
+		</div>
+		<script type="text/javascript">
+		
+			//加载层
+			function loading(msg){
+				var loading = layer.msg(msg, {
+					icon:16,
+					shade:[0.1, '#fff'],
+					time:false  //取消自动关闭
+				})
+			}
+			$('.phone-amount-one-one').click(function(){
+				$('.ac').removeClass("ac");
+				$(this).addClass("ac");
+			});
+			document.getElementById("app").addEventListener("touchstart",function(data){
+            //   optionsY = data.touches[0].pageY; //保存开始点Y轴位置
+                document.activeElement.blur();
+            })
+			//点击购买
+			$('.sieam-goumai').click(function(){
+				//加载层-风格3
+				layer.load(2);
+				setTimeout(function () {goumaishujutijiao()},1000);
+			});
+			// 购买数据提交
+			function goumaishujutijiao(){
+				var mobile = $("#phone").val();
+				if (mobile && /^1(3\d|47|(5[0-3|5-9])|(7[0|7|8])|(8[0-3|5-9]))-?\d{4}-?\d{4}$/.test(mobile)) {
+					if (mobile.length > 11 || mobile.length < 11) {
+						layer.msg("请输入11位的手机号码");
+						layer.closeAll('loading');
+						return;
+					}
+				} else {
+					layer.msg("请输入正确的手机号码");
+					layer.closeAll('loading');
+					return;
+				}
+				$.ajax({
+				// 	url:"https://wangguan.topvoyage.top/service-feign/api/token/hi",
+				// 	url:"http://172.16.7.179:8080/service-feign/api/token/hi",
+				// 	url:"https://wangguan.topvoyage.top/service-feign/api/token/hi",
+					type: "POST",
+					async: false,
+					data:{"type":"话费充值","name":"话费充值","amount":$('.ac').attr('data-value'),"userPhone":mobile,"userId":localStorage.getItem("userId"),"activityId":$('.ac').attr('data-huodong'),"url":window.location.href},
+				    dataType:'json',
+					success:function(result){
+					    if(result.code != "200"){
+							if(result.code == "4"){
+								//询问框
+								layer.confirm('您已参加过此活动，是否原本的价格购买', {
+								  btn: ['确定支付','取消支付'] //按钮
+								}, function(){
+								  layer.closeAll('loading');
+								  	//设置：
+								  	localStorage.setItem("url", result.MERORDERNO);
+								  	localStorage.setItem("off", 1);
+								  	localStorage.setItem("query", 10);
+								     // window.location.href = result.url;
+								  	setTimeout(function () {window.location.href = "wechat.html?order="+result.order+"&&phone="+result.phone+"&&data="+result.data+"&&gui=3";},1000);
+								}, function(){
+								  $.ajax({
+										url:"https://wangguan.topvoyage.top/service-feign/api/token/quXiaoOrder",
+										// url:"http://106.15.56.132:8765/api/token/quXiaoOrder",
+										type: "POST",
+										async: false,
+										data:{"orderHao":result.MERORDERNO},
+										dataType:'json',
+										success:function(result){
+											if(result.code == 0){
+												layer.msg("已取消支付");
+												layer.closeAll('loading');
+											}else{
+												layer.msg("服务器响应失败请联系管理员");
+											}
+										},error:function(result){
+											layer.msg("服务器响应失败请联系管理员");
+										}
+									});
+								});
+							}else if(result.code == "5"){
+								//询问框
+								layer.confirm('当前名额已不足，是否以原价购买', {
+								  btn: ['确定支付','取消支付'] //按钮
+								}, function(){
+								  layer.closeAll('loading');
+								  	//设置：
+								  	localStorage.setItem("url", result.MERORDERNO);
+								  	localStorage.setItem("off", 1);
+								  	localStorage.setItem("query", 10);
+								     // window.location.href = result.url;
+								  	setTimeout(function () {window.location.href = "wechat.html?order="+result.order+"&&phone="+result.phone+"&&data="+result.data+"&&gui=3";},1000);
+								}, function(){
+								  $.ajax({
+										url:"https://wangguan.topvoyage.top/service-feign/api/token/quXiaoOrder",
+										// url:"http://106.15.56.132:8765/api/token/quXiaoOrder",
+										type: "POST",
+										async: false,
+										data:{"orderHao":result.MERORDERNO},
+										dataType:'json',
+										success:function(result){
+											if(result.code == 0){
+												layer.msg("已取消支付");
+												layer.closeAll('loading');
+											}else{
+												layer.msg("服务器响应失败请联系管理员");
+											}
+										},error:function(result){
+											layer.msg("服务器响应失败请联系管理员");
+										}
+									});
+								});
+							}else{								
+								layer.msg("服务器响应失败请联系管理员");
+								layer.closeAll('loading');
+							}
+					    }else{
+							layer.closeAll('loading');
+					        //设置：
+                            localStorage.setItem("url", result.MERORDERNO);
+                            localStorage.setItem("off", 1);
+                            localStorage.setItem("query", 10);
+					       // window.location.href = result.url;
+							setTimeout(function () {window.location.href = "wechat.html?order="+result.order+"&&phone="+result.phone+"&&data="+result.data+"&&gui=3";},1000);
+					    }
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+						layer.closeAll('loading');
+					}
+				});
+			}
+            //点击兑换			
+			// $('.sieam-duihuan').click(function(){
+			// 	var mobile = $("#phone").val();
+			// 	if (mobile && /^1(3\d|47|(5[0-3|5-9])|(7[0|7|8])|(8[0-3|5-9]))-?\d{4}-?\d{4}$/.test(mobile)) {
+			// 		if (mobile.length > 11 || mobile.length < 11) {
+			// 			layer.msg("请输入11位的手机号码");
+			// 			return;
+			// 		}
+			// 	} else {
+			// 		layer.msg("请输入正确的手机号码");
+			// 		return;
+			// 	}
+			// });
+			
+            function isSafari(){
+                var ua = navigator.userAgent.toLowerCase();
+                if (ua.indexOf('applewebkit') > -1 && ua.indexOf('mobile') > -1 && ua.indexOf('safari') > -1 &&
+                    ua.indexOf('linux') === -1 && ua.indexOf('android') === -1 && ua.indexOf('chrome') === -1 &&
+                    ua.indexOf('ios') === -1 && ua.indexOf('browser') === -1) {
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            var zhuangtai = GetRequest().zhuangtai;
+		</script>
+	</body>
+</html>

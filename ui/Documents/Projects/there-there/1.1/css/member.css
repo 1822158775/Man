@@ -1,0 +1,243 @@
+.sthy-zhuti{
+	position: relative;
+}
+.sthy-beijing{
+	width: 100%;
+	max-height: 200px;
+	position: absolute;
+	z-index: -1;
+	overflow: hidden;
+}
+.sthy-beijing img{
+	width: 100%;
+}
+.sthy-input{
+	position: absolute;
+	margin: 0% 4%;
+	height: 83px;
+	opacity: 1;
+	background: #ffffff;
+	border-radius: 5px;
+	width: 92%;
+	margin-top: 180px;
+}
+.sthy-input-zhuti{
+	position: relative;
+	height: 100%;
+}
+.sthy-txt{
+	position: absolute;
+	top: 22%;
+	left: 6%;
+	opacity: 1;
+	font-size: 12px;
+	font-weight: 400;
+	text-align: left;
+	color: #000000;
+}
+.sthy-shu{
+	position: absolute;
+	top: 54%;
+	left: 6%;
+	outline: none;
+	height: 17px;
+	width: 90%;
+}
+.sthy-shu input{
+	background:none;  
+	outline:none;  
+	border:none;
+	width: 100%;
+	height: 100%;
+	font-weight: 700;
+	color: #999999;
+	font-size: 13px;
+}
+.sthy-shu input::placeholder{
+	opacity: 1;
+	font-size: 13px;
+	font-weight: 400;
+	text-align: left;
+	color: #999999;
+}
+.sthy-input-two{
+	position: relative;
+}
+.sthy-input-two-17{
+	position: absolute;
+	left: 5%;
+	top: 19px;
+	width: 4px;
+	height: 16px;
+	opacity: 1;
+	background: #d64f49;
+}
+.sthy-input-two-title{
+	position: absolute;
+	top: 15px;
+	opacity: 1;
+	font-size: 17px;
+	font-weight: 700;
+	color: #000000;
+	left: 8%;
+}
+.sthy-input-two-tao-can{
+	width: 100%;
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.sthy-input-two-tao-can>div{
+    margin: 6px 0px;
+}
+.sthy-input-two-tao-can-button{
+	width: 100%;
+	max-width: 108px;
+	height: 77px;
+	opacity: 1;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16); 
+	line-height: 77px;
+	text-align: center;
+	opacity: 1;
+	font-size: 17px;
+	font-weight: 700;
+	text-align: center;
+	color: #000000;
+	position: relative;
+	overflow: hidden;
+}
+.ac{
+	opacity: 1;
+	background: linear-gradient(90deg,#f7df7d, #fce48a);
+	border-radius: 5px;
+}
+.sthy-input-two-tao-can-huo-dong{
+	position: absolute;
+	height: 14px;
+	opacity: 1;
+	font-size: 10px;
+	font-family: PingFang SC, PingFang SC-Regular;
+	font-weight: 400;
+	text-align: center;
+	color: #fde291;
+	right: 0px;
+	top: 0px;
+	line-height: 17px;
+	width: 49px;
+	height: 17px;
+	opacity: 1;
+	background: #493d23;
+	border-bottom-left-radius: 2px;
+}
+.sthy-input-two-tao-shuo-ming{
+	margin-top: 20px;
+	width: 100%;
+}
+.sthy-input-two-tao-shuo-ming-title{
+	opacity: 1;
+	font-size: 10px;
+	font-weight: 400;
+	color: #666666;
+	margin-bottom: 11px;
+}
+.sthy-input-two-tao-shuo-ming-text{
+	font-size: 10px;
+	font-weight: 400;
+	text-align: left;
+	color: #666666;
+	line-height: 20px;
+	margin-left: 5%;
+    width: 90%;
+}
+.sthy-input-two-tao-shuo-ming-ke-fu,.sthy-input-two-tao-shuo-ming-ke-fu *{
+	margin-top: 32px;
+	opacity: 1;
+	font-size: 12px;
+	font-weight: 400;
+	text-align: center;
+	color: #333333;
+}
+.sthy-button{
+	width: 100%;
+	height: 64px;
+	opacity: 1;
+	background: #ffffff;
+	position: fixed;
+	bottom: 0px;
+	max-width: 700px;
+}
+.sthy-button-one{
+	margin: auto;
+	margin-top: 10px;
+	height: 44px;
+	opacity: 1;
+	background: #d64f49;
+	border: 1px solid #d64f49;
+	border-radius: 23px;
+	width: 92%;
+	opacity: 1;
+	font-size: 17px;
+	font-weight: 700;
+	text-align: center;
+	color: #ffffff;
+	line-height: 44px;
+}
+.sthy-input-two-cheng-qi{
+    position: relative;
+    height: 40px;
+}
+.sthy-zhuti{
+	max-width: 700px;
+	margin: auto;
+	height: 100vh;
+    overflow-y: auto;
+}
+.sthy-input-two-tao-can-img{
+	display: none;
+}
+.ac .sthy-input-two-tao-can-img{
+	display: block;
+}
+.ac .sthy-input-two-tao-can-img img{
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	right: 6px;
+	bottom: 5px;
+}
+.tao_can_kuai_name{
+	height: 20px;
+}
+.tao_can_kuai_jia_ge{
+	height: 12px;
+	opacity: 1;
+	font-size: 12px;
+	font-weight: 300;
+	text-align: center;
+	color: #848484;
+}
+.dzkq-input-two-tao-can-img img{
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	right: 6px;
+	bottom: 5px;
+}
+.dzkq-input-two-tao-can-img{
+	display: none;
+}
+.ac .dzkq-input-two-tao-can-img{
+	display: block;
+}
+.sthy-txt-title{
+    margin-top: 20px;
+    opacity: 1;
+    font-size: 17px;
+    font-weight: 800;
+    color: #000000;
+    margin-left: 5%;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我的券码</title>		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<script src="./js/jquery-3.5.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/jquery-barcode.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/jquery.qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/gongju.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layui-v2.6.8/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/gongju.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myquanma.css"/>
+		<style>
+			body{
+				overflow:hidden;
+				width: 100%;
+				background-color: rgba(245,246,250,1);
+			}
+			#bcTarget{
+				width: 100%;
+				height: 100%;
+			}
+			#qrcode canvas{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="myquanma-zhuti">
+				
+				<div class="myquanma-beijing"></div>
+				<div class="myquanma-title">
+					<div class="myquanma-title-bei-jing-tu">
+						<img src="./img/my-quanma-beijing.png" alt="背景图片">
+					</div>
+					<div class="myquanma-title-bei-jing-left-top"></div>
+					<div class="myquanma-title-txt">
+						<div class="title">
+							
+						</div>
+						<div class="txt-age">
+
+						</div>
+						<div class="age">
+							
+						</div>
+					</div>
+				</div>
+				<div class="myquanma-er-wei-ma-beijing">
+					<div class="myquanma-er-wei-ma-beijing-bei-jing">
+						<!--<img src="./img/er-wei-ma-bei-jing.png" >-->
+					</div>
+					<div class="tiao-xing-ma">
+						<div id="bcTarget">
+							
+						</div>
+					</div>
+					<div class="er-wei-ma">
+						<div id="qrcode">
+							
+						</div>
+					</div>
+					<div class="quan-ma">
+						券码：<span id="quan-ma-shu"></span><img id="fu-zhi-btn" data-value="" src="./img/fu-zhi.png" />
+					</div>
+					<div class="chan-pin-jei-shao">
+						<div class="chan-pin-title">
+							产品介绍
+						</div>
+						<div class="chan-pin-age chan-pin-age-shang_pin">
+							<!--产品介绍产品介绍产品介绍-->
+						</div>
+						<div class="chan-pin-title chan-pin-title-huo_dong" style="margin-top: 40px;display: none;">
+							活动介绍
+						</div>
+						<div class="chan-pin-age chan-pin-title-huo_dong chan-pin-title-huo_age" style="display: none;">
+							<!--活动介绍活动介绍活动介绍-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function copyText(text) {
+			    var textarea = document.createElement("textarea");
+			    var currentFocus = document.activeElement;
+			    document.body.appendChild(textarea);
+			    textarea.value = text;
+			    textarea.focus();
+			    if (textarea.setSelectionRange)
+			        textarea.setSelectionRange(0, textarea.value.length);
+			    else
+			        textarea.select();
+			    try {
+			        var flag = document.execCommand("copy");
+			    } catch(eo){
+			        var flag = false;
+			    }
+			    document.body.removeChild(textarea);
+			    currentFocus.focus();
+			    return flag;
+			}
+			
+			// $(function(){
+			// 	 // $("#bcTarget").barcode("153510264086cc8e", "ean13", {
+   //   //                output: 'css',       //渲染方式 css/bmp/svg/canvas
+   //   //                //bgColor: '#ff0000', //条码背景颜色
+   //   //                //color: '#00ff00',   //条码颜色
+   //   //                barWidth: 2,        //单条条码宽度
+   //   //                barHeight: 55,     //单体条码高度
+   //   //                // moduleSize: 10,   //条码大小
+   //   //                // posX: 10,        //条码坐标X
+   //   //                // posY: 5,         //条码坐标Y
+   //   //                // showHRI: false,    //是否在条码下方显示内容
+   //   //                addQuietZone: false  //是否添加空白区（内边距）
+   //   //            });
+			// });
+			//金额进行处理
+			function jine_if(value){
+				return value;
+			}
+			//加载层-风格3
+			layer.load(2);
+			var order = GetRequest().order;
+			//查询活动详情
+			function huo_dong(id){
+				$.ajax({
+					url:"https://wangguan.topvoyage.top/service-feign/api/token/huoDongQuaner",
+				// 	url:"https://wangguan.topvoyage.top/service-feign/api/token/huoDongXiangQing",
+					type: "POST",
+					async: false,
+					data:{"id":id},
+					dataType:'json',
+					success:function(result){
+						if(result.code == 0){
+							$(".chan-pin-title-huo_age").html(imgUrl(result.value.huoDongJeiShao));
+							$(".chan-pin-title-huo_dong").css("display","block");
+						}else{
+							layer.msg("服务器响应失败请联系管理员");
+						}
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				});
+			}
+			//查询商品详情
+			function shang_pin(id){
+			    $.ajax({
+					url:"https://wangguan.topvoyage.top/service-feign/api/token/shangPinSKU",
+				// 	url:"https://wangguan.topvoyage.top/service-feign/api/token/shangPinSKU",
+					type: "POST",
+					async: false,
+					data:{"id":id},
+					dataType:'json',
+					success:function(result){
+						if(result.code == 0){
+							$(".chan-pin-age-shang_pin").html(imgUrl(result.value[0].shangPinMiaoShu));
+						}else{
+							layer.msg("服务器响应失败请联系管理员");
+						}
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				});
+			}
+			$.ajax({
+				url:"https://wangguan.topvoyage.top/service-feign/api/token/codeQuAnMa",
+				// url:"https://wangguan.topvoyage.top/service-feign/api/token/codeQuAnMa",
+				type: "POST",
+				async: false,
+				data:{"order":order},
+				dataType:'json',
+				success:function(result){
+					if(result.code == "0"){
+						var value = JSON.parse(result.value);
+						$(".txt-age").html(JSON.parse(value.shangPinShuJu).name);
+						$(".txt-age").css("display","block");
+						if(value.activityId != null){
+							huo_dong(value.activityId);
+						}
+						if(value.shangPinSId != null){
+						    shang_pin(value.shangPinSId);
+						}
+						$(".myquanma-title-txt .title").html(value.shangPinName);
+						$(".myquanma-title-txt .age").html("￥"+jine_if(value.amount));
+						$('#qrcode').qrcode(value.comment);
+						$('#quan-ma-shu').html(value.comment);
+						$('#fu-zhi-btn').attr("data-value",value.comment);
+						layer.closeAll('loading');
+					}else{
+						layer.msg("服务器响应失败请联系管理员");
+						layer.closeAll('loading');
+					}
+				},error:function(result){
+					layer.msg("服务器响应失败请联系管理员");
+					layer.closeAll('loading');
+				}
+			});
+			document.getElementById('fu-zhi-btn').onclick = function(){
+			    var a=$(this).attr("data-value");
+			    var flag = copyText(a);//这个必须在DOM对象的事件线程中执行
+			    layer.msg(flag ? "复制成功！" : "复制失败！");
+			};
+		</script>
+	</body>
+</html>

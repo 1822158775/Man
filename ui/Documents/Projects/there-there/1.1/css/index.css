@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'lianbiyingwen';
+    src: url('../font/Source Han Sans CN Regular.woff2');
+}
+*{
+	/* font-family: Helvetica,Arial,"Hiragino Sans GB","Microsoft Yahei","微软雅黑",STHeiti,"华文细黑",sans-serif;
+	font-family: "Microsoft YaHei","微软雅黑","SimSun","宋体";
+	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif; */
+	font-family: "lianbiyingwen";
+}
+.while-color{
+	color: white;
+	
+}
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+
+a{
+ text-decoration: none;
+ }

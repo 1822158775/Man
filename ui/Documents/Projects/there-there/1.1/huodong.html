@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>活动专区</title>		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<script src="./js/jquery-3.5.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layui-v2.6.8/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/gongju.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/huo_dong.css"/>
+		<style>
+			body{
+				overflow:hidden;
+				width: 100%;
+			}
+			.dian_ji_cha_kan_gui_ze{
+			    font-size: 12px;
+                font-weight: 700;
+                text-align: center;
+                color: #3481e5;
+                margin-top: 5px;
+			}
+			.yourclass{
+				 width: calc(1123px * 0.25); 
+				 height: calc(2364px * 0.25); 
+				background: url(./img/tanchu_beijing.png) no-repeat;
+				background-size: auto 100%;
+				box-shadow: none;
+			}
+			.yourclass .layui-layer-content{
+				height: 100%;
+				position: relative;
+				background-color: none;
+			}
+			.layui-layer-content img{
+				height: 100%;
+				width: 100%;
+			}
+			.wenan{
+				display: flex;
+				flex-direction: column;
+			}
+			.wenan_text{
+				opacity: 1;
+				font-size: 14px;
+				font-weight: 400;
+				color: #fe8e16;
+				overflow-y: auto;
+			}
+			.queren{
+				position: relative;
+				display: flex;
+				align-items: center;
+			}
+			.queren_text{
+				position: absolute;
+				text-align: center;
+				width: 100%;
+				color: #ffffff;
+				font-size: 1.3em;
+				left: 2%;
+			}
+			.title_text{
+				text-align: center;
+				position: absolute;
+				font-size: 1.3em;
+				width: 100%;
+				color: #ffffff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="huo_dong_zhu_ti">
+				<div class="shangpins_zhu_ti-my-order">
+					<div class="shangpins_zhu_ti-my-order-img">
+						<img src="./img/my-order.png" />
+					</div>
+					<div class="shangpins_zhu_ti-my-order-text">
+						我的订单
+					</div>
+				</div>
+				<div class="huo_dong_zhu_ti-bei_jing">
+					<img src="img/shangpins-beijing.png" />
+				</div>
+				<!-- 活动规则 -->
+				<div class="huo_dong_zhu_ti-one">
+					<div class="huo_dong_zhu_ti-huo_dong_gui_ze">
+						<div class="huo_dong_zhu_ti-huo_dong_gui_ze-title">
+							活动规则
+						</div>
+						<div class="huo_dong_zhu_ti-huo_dong_gui_ze-title_one">
+							-活动对象-
+						</div>
+						<div class="huo_dong_zhu_ti-huo_dong_gui_ze-type">
+							中信银行上海分行发薪客户
+						</div>
+						<div class="huo_dong_zhu_ti-huo_dong_gui_ze-age">
+							-活动内容-
+						</div>
+						<div class="huo_dong_zhu_ti-huo_dong_gui_ze-age_one">
+							发薪客户每周三可参与优惠1元购活动，每周总限量2400份，每人每周最多领取1份，先到先得，购完即止。（限中信银行借记卡）
+						</div>
+						<div class="huo_dong_zhu_ti-huo_dong_gui_ze-time">
+							-活动时间-
+						</div>
+						<div class="huo_dong_zhu_ti-huo_dong_gui_ze-time_one">
+							2021年10月1日-2021年12月31日
+						</div>
+						<div class="dian_ji_cha_kan_gui_ze">
+						    点击查看规则
+						</div>
+					</div>
+				</div>
+				<!-- 高端客户专项 -->
+				<!-- <div class="huo_dong_zhu_ti-two">
+					<div class="huo_dong_zhu_ti-huo_dong_gui_ze-title">
+						高端客户专项
+					</div>
+					<div class="huo_dong_zhu_ti-shang_pin">
+						<div class="huo_dong_zhu_ti-shang_pin-kuai">
+							<div class="huo_dong_zhu_ti-shang_pin-zi">
+								<div class="huo_dong_zhu_ti-shang_pin-zi-img">
+									<img src="./img/xing_ba_ku.png" />
+								</div>
+								<div class="huo_dong_zhu_ti-shang_pin-zi-text">
+									星巴克咖啡
+								</div>
+							</div>
+							<div class="huo_dong_zhu_ti-shang_pin-button">
+								立即抢
+							</div>
+						</div>
+						<div class="huo_dong_zhu_ti-shang_pin-kuai">
+							<div class="huo_dong_zhu_ti-shang_pin-zi">
+								<div class="huo_dong_zhu_ti-shang_pin-zi-img">
+									<img src="./img/jei_ji.png" />
+								</div>
+								<div class="huo_dong_zhu_ti-shang_pin-zi-text">
+									接送机
+								</div>
+							</div>
+							<div class="huo_dong_zhu_ti-shang_pin-button">
+								立即抢
+							</div>
+						</div>
+						<div class="huo_dong_zhu_ti-shang_pin-kuai">
+							<div class="huo_dong_zhu_ti-shang_pin-zi">
+								<div class="huo_dong_zhu_ti-shang_pin-zi-img">
+									<img src="./img/vip.png" />
+								</div>
+								<div class="huo_dong_zhu_ti-shang_pin-zi-text">
+									VIP休息室
+								</div>
+							</div>
+							<div class="huo_dong_zhu_ti-shang_pin-button">
+								立即抢
+							</div>
+						</div>
+					</div>
+				</div> -->
+				<!-- 本周福利 -->
+				<div class="huo_dong_zhu_ti-there">
+					<div class="huo_dong_zhu_ti-huo_dong_gui_ze-title">
+						本周福利
+					</div>
+					<div class="shu_ju_s">
+						<div class="zhuan_qu">
+							<!-- <div class="huo_dong_zhu_ti-huo_dong_gui_ze-zhuan_qu">
+								<div class="huo_dong_zhu_ti-huo_dong_gui_ze-zhuan_qu-img" style="margin-right: 27px;">
+									<img src="./img/zuo.png" />
+								</div>
+								<div class="huo_dong_zhu_ti-huo_dong_gui_ze-zhuan_qu-text">
+									一 元 专 区
+								</div>
+								<div class="huo_dong_zhu_ti-huo_dong_gui_ze-zhuan_qu-img" style="margin-left: 27px;">
+									<img src="./img/you.png" />
+								</div>
+							</div>
+							<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju">
+								<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi">
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi-bei_jing">
+										<img src="./img/bei_jing_1.png" />
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_img">
+										<img src="./img/didi.png" />
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_title">
+										滴滴5元代金券
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_button">
+										马上抢
+									</div>
+								</div>
+								<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi">
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi-bei_jing">
+										<img src="./img/bei_jing_2.png" />
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_img">
+										<img src="./img/didi.png" />
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_title">
+										滴滴5元代金券
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_button">
+										马上抢
+									</div>
+								</div>
+								<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi">
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi-bei_jing">
+										<img src="./img/bei_jing_3.png" />
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_img">
+										<img src="./img/didi.png" />
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_title">
+										滴滴5元代金券
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_button">
+										马上抢
+									</div>
+								</div>
+								<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi">
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi-bei_jing">
+										<img src="./img/bei_jing_4.png" />
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_img">
+										<img src="./img/didi.png" />
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_title">
+										滴滴5元代金券
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_button">
+										马上抢
+									</div>
+								</div>
+								<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi">
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi-bei_jing">
+										<img src="./img/bei_jing_5.png" />
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_img">
+										<img src="./img/didi.png" />
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_title">
+										滴滴5元代金券
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_button">
+										马上抢
+									</div>
+								</div>
+								<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi">
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi-bei_jing">
+										<img src="./img/bei_jing_6.png" />
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_img">
+										<img src="./img/didi.png" />
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_title">
+										滴滴5元代金券
+									</div>
+									<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_button">
+										马上抢
+									</div>
+								</div>
+							</div>
+						 -->
+						</div>			
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var zhuan_qu_map = new Map;
+			var cun_zai_zhuan_qu_map = new Map;
+			// 点击跳转到我的订单
+			$(".shangpins_zhu_ti-my-order").click(function(){
+				window.location.href = "myorder.html";
+			});
+			//查询所有专区
+			$.ajax({
+				url:"https://wangguan.topvoyage.top/service-feign/api/token/zhuanQu",
+				// url:"https://wangguan.topvoyage.top/service-feign/api/token/zhuanQu",
+				type: "POST",
+				async: false,
+				dataType:'json',
+				success:function(result){
+					var bei_jing_tu_pian = 0;
+					if(result.code == 0){
+						for(var i = 0;i < result.value.length;i++){
+							var zhuan = result.value[i];
+							var zhuanJSON = {
+								"id":zhuan.id,
+								"name":zhuan.name
+							}
+							zhuan_qu_map.set(zhuan.id,zhuanJSON);
+						}
+					}else{
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				},error:function(result){
+					layer.msg("服务器响应失败请联系管理员");
+				}
+			});
+			//活动渲染
+			function shu_ju_xuan_ran(id){
+				$.ajax({
+					url:"https://wangguan.topvoyage.top/service-feign/api/token/huoDongShangPin",
+				// 	url:"https://wangguan.topvoyage.top/service-feign/api/token/huoDongShangPin",
+					type: "POST",
+					async: false,
+					data:{"huoDongId":id},
+					dataType:'json',
+					success:function(result){
+						var bei_jing_tu_pian = 1;
+						if(result.code == 0){
+							for(var i = 0;i < result.value.length;i++){
+								var zJSON = result.value[i];
+								if(cun_zai_zhuan_qu_map.get(zJSON.zhuanQuId) == null){
+									$(".shu_ju_s").append('<div class="zhuan_qu'+zJSON.zhuanQuId+'"></div>');
+									$(".zhuan_qu"+zJSON.zhuanQuId).append('<div class="huo_dong_zhu_ti-huo_dong_gui_ze-zhuan_qu"><div class="huo_dong_zhu_ti-huo_dong_gui_ze-zhuan_qu-img" style="margin-right: 27px;"><img src="./img/zuo.png" /></div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-zhuan_qu-text">'+zhuan_qu_map.get(zJSON.zhuanQuId).name+'</div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-zhuan_qu-img" style="margin-left: 27px;"><img src="./img/you.png" /></div></div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju'+zJSON.zhuanQuId+'"></div>')
+								}
+								$(".huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju"+zJSON.zhuanQuId).append('<div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi"><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi-bei_jing"><img src="./img/bei_jing_'+bei_jing_tu_pian+'.png" /></div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_img"><img src="'+imgUrl(zJSON.imgage)+'" /></div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_title">'+zJSON.shangPinName+zJSON.sku+'</div><div class="huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_button" data-huo_dong_id='+zJSON.huoDongId+' data-shang_pin_s_id='+zJSON.shangPinSId+' data-shang_pin_sku_id='+zJSON.shangPinSkuId+' data-type='+zJSON.type+'>马上抢</div></div>');
+								cun_zai_zhuan_qu_map.set(zJSON.zhuanQuId,"ok");
+								if(bei_jing_tu_pian >= 8){
+								    bei_jing_tu_pian = 1;
+								}else{
+							        bei_jing_tu_pian++;
+								}
+							}
+						}else{
+							layer.msg("服务器响应失败请联系管理员");
+						}
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				});
+			}
+			//查询活动详情
+			function huo_dong(id){
+				$.ajax({
+					url:"https://wangguan.topvoyage.top/service-feign/api/token/huoDongQuaner",
+				// 	url:"https://wangguan.topvoyage.top/service-feign/api/token/huoDongQuaner",
+					type: "POST",
+					async: false,
+					data:{"id":id},
+					dataType:'json',
+					success:function(result){
+						var bei_jing_tu_pian = 0;
+						if(result.code == 0){
+							if(result.value.huoDongZhuangTai == 0){
+								shu_ju_xuan_ran(id);
+							}
+						}else{
+							layer.msg("服务器响应失败请联系管理员");
+						}
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				});
+			}
+			$.ajax({
+				url:"https://wangguan.topvoyage.top/service-feign/api/token/shangXianHuoDong",
+			// 	url:"https://wangguan.topvoyage.top/service-feign/api/token/shangXianHuoDong",
+				type: "POST",
+				async: false,
+				dataType:'json',
+				success:function(result){
+					if(result.code == 0){
+            		    huo_dong(result.value[0].id);
+					}else{
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				},error:function(result){
+					layer.msg("服务器响应失败请联系管理员");
+				}
+			});
+			//点击立即抢
+			$("body").on("click",".huo_dong_zhu_ti-huo_dong_gui_ze-shu_ju-zi_button",function(){
+				if($(this).attr("data-type") == "直充类"){
+					window.location.href = "member.html?huoDongId="+$(this).attr("data-huo_dong_id")+"&&shangPinSId="+$(this).attr("data-shang_pin_s_id")+"&&shangPinSkuId="+$(this).attr("data-shang_pin_sku_id")+"&&type="+$(this).attr("data-type");
+				}else if($(this).attr("data-type") == "卡券类"){
+					window.location.href = "dzkq.html?huoDongId="+$(this).attr("data-huo_dong_id")+"&&shangPinSId="+$(this).attr("data-shang_pin_s_id")+"&&shangPinSkuId="+$(this).attr("data-shang_pin_sku_id")+"&&type="+$(this).attr("data-type");
+				}
+			});
+			
+			//点击查看规则
+			$(".dian_ji_cha_kan_gui_ze").click(function(){
+    			// 打印
+    			//页面层-自定义
+    			layer.open({
+    			  type: 1,
+    			  title: false,
+    			  closeBtn: 0,
+    			  shadeClose: true,
+    			  skin: 'yourclass',
+    			  content: '<div class="title_text" style="margin-top:'+2364 * 0.07+'px;">活动细则</div><div class="wenan" style="margin-top:'+2364 * 0.099+'px;width:'+1123 * 0.20+'px;margin-left:'+1123 * 0.025+'px;"><div class="wenan_text" style="height:'+2364 * 0.11+'px;margin-bottom:'+2364 * 0.001+'px;">1、活动时间<br>2021年10月20日-12月31日<br><br>2、活动对象<br>（1）代发新客户（实际入账后）从次周三起连续每周可领取一次权益，连续6周；<br>（2）代发存量客户（T-1月有代发记录），每个月可领取一次权益。<br><br>3、活动内容<br>活动期间，活动对象可在每周三可参与薪选购活动，客户可花费1元超值的活动商品，活动商品包括视听会员、话费充值、美食餐饮、生活服务等多项种类及产品，并且部分商品还将参与“一分付”的的活动，活动数量有限，每人每周最多领取1份，先到先得，购完即止。<br><br>4、奖品说明<br>奖品种类包括视听会员、话费充值、美食餐饮、生活服务等，客户可在【薪选购】活动页面，查看当期可领取的福利商品，并在“我的订单”中查看已购买的商品，并可查看使用方式等详细信息。<br><br>5、其他说明<br>（1）活动过程中，如有所持银行卡被停用或管制，违反国家法律法规、采用不正但手段参与活动等任一情况的客户，中信银行有权取消其参与活动的资格，收回已发放的奖品。<br>（2）在法律允许的范围内，中信银行对该活动有最终解释权。<br></div><div class="queren"><div class="queren_text">确&nbsp;&nbsp;&nbsp;认</div><img src="./img/duibi.png"></div></div>'
+    			});
+			});
+			$("body").on("click",".queren",function(){
+				$(".layui-layer-shade").click();
+			});
+		</script>
+	</body>
+</html>

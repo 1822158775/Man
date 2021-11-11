@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>电子券</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<script src="./js/jquery-3.5.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layui-v2.6.8/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/gongju.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/dzkq.css"/>
+		<style>
+			body{
+				overflow:hidden;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="dzkq-zhuti">
+				<div class="dzkq-beijing">
+					<img src="./img/shangpinxiangqing.png" alt="背景" />
+				</div>
+				<div class="dzkq-txt">
+					<div class="dzkq-txt-title">
+						<!-- 优酷电子券 -->
+					</div>
+					<div class="dzkq-jine-s">
+						<div class="dzkq-jine">
+							<!-- <div class="dzkq-jine-botton ac" data-value="1">
+								30元
+								<div class="dzkq-input-two-tao-can-img">
+									<img src="./img/me-ac.png" alt="对钩" />
+								</div>
+							</div>
+							<div class="dzkq-jine-botton" data-value="6500">
+								65元
+								<div class="dzkq-input-two-tao-can-img">
+									<img src="./img/me-ac.png" alt="对钩" />
+								</div>
+							</div>
+							<div class="dzkq-jine-botton" data-value="24900">
+								249元
+								<div class="dzkq-input-two-tao-can-img">
+									<img src="./img/me-ac.png" alt="对钩" />
+								</div>
+							</div> -->
+						</div>
+					</div>
+					<div class="dzkq-shang-pin-jian-jei">
+						<div class="dzkq-shang-pin-jian-jei-1">
+							<div class="dzkq-shang-pin-jian-jei-1-title">
+								<div class="dzkq-shang-pin-jian-jei-17"></div>
+								<div class="dzkq-shang-pin-jian-jei-txt">
+									商品简介
+								</div>
+							</div>
+							<div class="dzkq-shang-pin-jian-jei-age">
+							<!-- 	<span>1、优酷VIP会员的连续包月价格是15元/月、季度VIP价格是39元、年度VIP价格是99元、月度VIP则是20元。</span><br>
+								<span>优酷VIP会员的权益包括可在电脑、手机、ipad登录享受：观影特权、 功能特权、 身份特权、 直播特权、 客服特权五大类别超值会员特权，也包含点播节目5折扣优惠、全站视频跳广告、上万小时付费节目免费看、会员专属尊贵标示和各类享生活服务。</span>
+							 -->
+							 </div>
+						</div>
+						<div class="dzkq-shang-pin-jian-jei-2">
+							<div class="dzkq-shang-pin-jian-jei-2-title" style="display:none;">
+								<div class="dzkq-shang-pin-jian-jei-17-2"></div>
+								<div class="dzkq-shang-pin-jian-jei-txt2">
+									活动介绍
+								</div>
+							</div>
+							<div class="dzkq-shang-pin-jian-jei-age-2" style="display:none;">
+								<!--<span>活动期间，发薪客户每周一可免费领取话费、咖啡、音视频会员等服务代金券，每周限量5000份。每人每周最多领取一份，即每月最多领取4份。</span><br>-->
+							</div>
+							<div class="dzkq-input-two-tao-shuo-ming-ke-fu">
+								联系客服：<a href="tel:400-006-7720">400-006-7720</a>
+							</div>
+							<div style="width: 100%;height: 80px;">
+                    		    
+                    		</div>
+						</div>
+					</div>
+				</div>
+				<div class="dzkq-button">
+					<div class="dzkq-button-one">
+						立即购买
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//类型
+			var map = new Map;
+			//活动商品
+			var huo_dong_shang_pin_map = new Map;
+			//活动价格
+			var huo_dong_shang_pin_jia_ge_map = new Map;
+			//活动名额
+			var huo_dong_shang_pin_huo_dong_ming_e = new Map;
+			var minge = 0;
+			//点击进行选中
+			$('body').on("click",'.dzkq-jine-botton',function(){
+				// if($(this).attr("data-shi_fou_ke_dian") != "0"){
+				// 	layer.msg("名额不足")
+				// 	return false;
+				// }
+				$('.ac').removeClass('ac');
+				$(this).addClass('ac');
+			});
+			//点击进行立即购买
+			$('.dzkq-button-one').click(function(){
+				//加载层-风格3
+				layer.load(2);
+				setTimeout(function () {goumaishujutijiao()},1000);
+			});
+			var id = GetRequest().shangPinSId;
+			var shangPinSkuId = GetRequest().shangPinSkuId;
+			var huoDongId = GetRequest().huoDongId;
+			if(huoDongId != "undefined" && huoDongId != null && huoDongId != undefined && huoDongId != "null"){
+				var huodong = huo_dong(huoDongId);
+				if(huodong == "2"){
+				    shu_ju_xuan_ran_shang_pin(huoDongId);
+				}
+			}else{
+			    huoDongId = null;
+			}
+			if(id == null){
+				layer.msg("错误");
+			}else{
+				shu_ju_xuan_ran(id);
+			}
+			var huoDongName = "";
+			//活动渲染
+			function shu_ju_xuan_ran_shang_pin(id){
+				$.ajax({
+					url:"https://wangguan.topvoyage.top/service-feign/api/token/huoDongShangPin",
+				// 	url:"https://wangguan.topvoyage.top/service-feign/api/token/huoDongShangPin",
+					type: "POST",
+					async: false,
+					data:{"huoDongId":id},
+					dataType:'json',
+					success:function(result){
+						if(result.code == 0){
+							for(var i = 0;i < result.value.length;i++){
+								var h_d_s_p = result.value[i];
+								huo_dong_shang_pin_map.set(h_d_s_p.shangPinSkuId+"-"+h_d_s_p.shangPinSId,"参与活动");
+								huo_dong_shang_pin_jia_ge_map.set(h_d_s_p.shangPinSkuId+"-"+h_d_s_p.shangPinSId,h_d_s_p.jiaGe);
+								huo_dong_shang_pin_huo_dong_ming_e.set(h_d_s_p.shangPinSkuId+"-"+h_d_s_p.shangPinSId,h_d_s_p.mingE);
+							}
+						}else{
+							layer.msg("服务器响应失败请联系管理员");
+						}
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				});
+			}
+			// 购买数据提交
+			function goumaishujutijiao(){
+				if($('.ac').attr('data-id') == null){
+					layer.closeAll('loading');
+					layer.msg("请选择");
+					return;
+				}
+				var shu_ju = map.get($('.ac').attr('data-id'));
+			    if(shu_ju.kuCun <= 0){
+			        layer.msg("当前库存不足");
+			        layer.closeAll('loading');
+			        return false;
+			    }
+				$.ajax({
+				    url:"https://wangguan.topvoyage.top/service-feign/api/token/hi",
+					// url:"http://172.16.7.179:8080/service-feign/api/token/hi",
+				    // url:"http://172.16.7.179:8765/api/token/hi",
+					type: "POST",
+					async: false,
+					data:{"name": shu_ju.name,"type": shu_ju.type,"shanPinId" : id,"userId":localStorage.getItem("userId"),"pinId":shu_ju.id,"pinCount":1,"gui":shu_ju.gui,"activityId":huoDongId,"shangPinSId":id,"shangPinSkuId":$('.ac').attr('data-id'),"url":window.location.href},
+									    dataType:'json',
+					success:function(result){
+						if(result.code != "200"){
+							if(result.code == "-1"){
+								layer.msg("当前库存不足，请选择其他商品");
+								layer.closeAll('loading');
+							}else if(result.code == "4"){
+								layer.confirm('您已参加过此活动，是否原本的价格购买', {
+								  btn: ['确认购买','取消购买'] //按钮
+								}, function(){
+								  //设置：
+								 localStorage.setItem("url", result.MERORDERNO);
+								 localStorage.setItem("off", 1);
+								 localStorage.setItem("query", 10);
+								 var gui_shu_zi = 0;
+								 if(shu_ju.gui == "福司令"){
+									gui_shu_zi = "1";
+								 }else{
+									gui_shu_zi = "2";
+								 }
+								 // window.location.href = result.url;
+								 setTimeout(function () {window.location.href = "wechat.html?order="+result.order+"&&phone="+result.phone+"&&data="+result.data+"&&pinId="+shu_ju.id+"&&pinCount=1&&type=2&&gui="+gui_shu_zi},1000);
+								 }, function(){
+									//移除当前未支付的订单
+									$.ajax({
+										url:"https://wangguan.topvoyage.top/service-feign/api/token/quXiaoOrder",
+										// url:"http://106.15.56.132:8765/api/token/quXiaoOrder",
+										type: "POST",
+										async: false,
+										data:{"orderHao":result.order},
+										dataType:'json',
+										success:function(result){
+											if(result.code == 0){
+												layer.msg("已取消支付")
+											}else{
+												layer.msg("服务器响应失败请联系管理员");
+											}
+										},error:function(result){
+											layer.msg("服务器响应失败请联系管理员");
+										}
+									});
+								 });
+								 layer.closeAll('loading');
+							}else if(result.code == "5"){
+								//询问框
+								layer.confirm('当前已有存在的订单', {
+								  btn: ['重新支付','取消支付'] //按钮
+								}, function(){
+								  localStorage.setItem("url", result.value.orderHao);
+								  localStorage.setItem("off", 1);
+								  localStorage.setItem("query", 10);
+								  var gui_shu_zi = 0;
+								  if(shu_ju.gui == "福司令"){
+									gui_shu_zi = "1";
+								  }else{
+									gui_shu_zi = "2";
+								  }
+								  setTimeout(function () {window.location.href = "wechat.html?order="+result.value.orderHao+"&&phone="+result.value.phone+"&&data="+result.value.addTheDataTime+"&&pinId="+shu_ju.id+"&&pinCount=1&&type=2&&gui="+gui_shu_zi},1000);
+								}, function(){
+								  $.ajax({
+										url:"https://wangguan.topvoyage.top/service-feign/api/token/quXiaoOrder",
+										// url:"http://106.15.56.132:8765/api/token/quXiaoOrder",
+										type: "POST",
+										async: false,
+										data:{"id":result.value.id},
+										dataType:'json',
+										success:function(result){
+											if(result.code == 0){
+											}else{
+												layer.msg("服务器响应失败请联系管理员");
+											}
+										},error:function(result){
+											layer.msg("服务器响应失败请联系管理员");
+										}
+									});
+								});
+								layer.closeAll('loading');
+							}else if(result.code == "6"){
+							layer.msg("当前活动已结束");
+							layer.closeAll('loading');
+							}else if(result.code == "7"){
+								//询问框
+								layer.confirm('当前名额已不足，是否以原价购买', {
+								  btn: ['确定支付','取消支付'] //按钮
+								}, function(){
+								  localStorage.setItem("url", result.MERORDERNO);
+								  localStorage.setItem("off", 1);
+								  localStorage.setItem("query", 10);
+								  var gui_shu_zi = 0;
+								  if(shu_ju.gui == "福司令"){
+									gui_shu_zi = "1";
+								  }else{
+									gui_shu_zi = "2";
+								  }
+								  setTimeout(function () {window.location.href = "wechat.html?order="+result.orderHao+"&&phone="+result.phone+"&&data="+result.addTheDataTime+"&&pinId="+shu_ju.id+"&&pinCount=1&&type=2&&gui="+gui_shu_zi},1000);
+								}, function(){
+								  $.ajax({
+										url:"https://wangguan.topvoyage.top/service-feign/api/token/quXiaoOrder",
+										// url:"http://106.15.56.132:8765/api/token/quXiaoOrder",
+										type: "POST",
+										async: false,
+										data:{"orderHao":result.order},
+										dataType:'json',
+										success:function(result){
+											if(result.code == 0){
+											}else{
+												layer.msg("服务器响应失败请联系管理员");
+											}
+										},error:function(result){
+											layer.msg("服务器响应失败请联系管理员");
+										}
+									});
+								});
+								layer.closeAll('loading');
+							}else if(result.code == "8"){
+								//询问框
+								layer.confirm('尊敬的客户，很抱歉，您并非本次活动的指定用户，是否以原价购买', {
+								  btn: ['确定支付','取消支付'] //按钮
+								}, function(){
+								  localStorage.setItem("url", result.MERORDERNO);
+								  localStorage.setItem("off", 1);
+								  localStorage.setItem("query", 10);
+								  var gui_shu_zi = 0;
+								  if(shu_ju.gui == "福司令"){
+									gui_shu_zi = "1";
+								  }else{
+									gui_shu_zi = "2";
+								  }
+								  setTimeout(function () {window.location.href = "wechat.html?order="+result.order+"&&phone="+result.phone+"&&data="+result.data+"&&pinId="+shu_ju.id+"&&pinCount=1&&type=2&&gui="+gui_shu_zi},1000);
+								}, function(){
+								  $.ajax({
+										url:"https://wangguan.topvoyage.top/service-feign/api/token/quXiaoOrder",
+										// url:"http://106.15.56.132:8765/api/token/quXiaoOrder",
+										type: "POST",
+										async: false,
+										data:{"orderHao":result.order},
+										dataType:'json',
+										success:function(result){
+											if(result.code == 0){
+											}else{
+												layer.msg("服务器响应失败请联系管理员");
+											}
+										},error:function(result){
+											layer.msg("服务器响应失败请联系管理员");
+										}
+									});
+								});
+								layer.closeAll('loading');
+							}else{
+								layer.msg("服务器响应失败请联系管理员");
+								layer.closeAll('loading');
+							}
+						}else{
+							layer.closeAll('loading');
+							//设置：
+							localStorage.setItem("url", result.MERORDERNO);
+							localStorage.setItem("off", 1);
+							localStorage.setItem("query", 10);
+							var gui_shu_zi = 0;
+							if(shu_ju.gui == "福司令"){
+								gui_shu_zi = "1";
+							}else{
+								gui_shu_zi = "2";
+							}
+						   // window.location.href = result.url;
+							setTimeout(function () {window.location.href = "wechat.html?order="+result.order+"&&phone="+result.phone+"&&data="+result.data+"&&pinId="+shu_ju.id+"&&pinCount=1&&type=2&&gui="+gui_shu_zi},1000);
+						}
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+						layer.closeAll('loading');
+					}
+				});
+			}
+			//判断是否参与活动
+			function can_yu_huo_dong(value){
+				if(value == null){
+					return"";
+				}else{
+					return '<div class="sthy-input-two-tao-can-huo-dong">'+value+'</div>';
+				}
+			}
+			
+			//判断是否显示活动价
+			function can_yu_huo_dong_huo_dong_jia(value){
+			    if(value == null){
+					return"";
+				}else{
+					return '活动价：';
+				}
+			}
+			//参与活动价格显示
+			function can_yu_jia_ge_hong_dong(id,sid,value){
+				if(huo_dong_shang_pin_jia_ge_map.get(id+"-"+sid) != null){
+					return huo_dong_shang_pin_jia_ge_map.get(id+"-"+sid);
+				}else{
+					return value;
+				}
+			}
+			//是否可以点击
+			function shi_fou_ke_yi_dian_ji(value){
+				if(value != null){
+					if(value > 0){
+						if(minge > 0){
+							return 0;
+						}else{
+							return 1;
+						}
+					}else{
+						return 1;
+					}
+				}else{
+					return 0;
+				}
+			}
+			//数据渲染
+			function shu_ju_xuan_ran(id){
+				$.ajax({
+					url:"https://wangguan.topvoyage.top/service-feign/api/token/shangPinSKU",
+				// 	url:"https://wangguan.topvoyage.top/service-feign/api/token/shangPinSKU",
+					type: "POST",
+					async: false,
+					data:{"id":id},
+					dataType:'json',
+					success:function(result){
+						if(result.code == 0){
+							$(".dzkq-txt-title").html(result.value[0].shangPinName);
+							$(".dzkq-shang-pin-jian-jei-age").html(imgUrl(result.value[0].shangPinMiaoShu));
+							var sku = JSON.parse(result.value[0].shangPinSku);
+							var str = "";
+							for(var i = 0;i < sku.length;i++){
+							    var ti_jiao_shu_ju = {
+    								"type" : sku[i].type,
+    								"gui" : sku[i].gui,
+    								"id" : sku[i].id,
+    								"kuCun" : sku[i].kuCun,
+    								"name" : result.value[0].shangPinName
+    							}
+    							map.set(sku[i].id+"",ti_jiao_shu_ju);
+								if(i == 0){
+									str += '<div class="dzkq-jine-botton" data-id="'+sku[i].id+'" data-shi_fou_ke_dian="'+shi_fou_ke_yi_dian_ji(huo_dong_shang_pin_huo_dong_ming_e.get(sku[i].id+"-"+result.value[0].id))+'" data-value="'+sku[i].jiaGe+'">'+can_yu_huo_dong(huo_dong_shang_pin_map.get(sku[i].id+"-"+result.value[0].id))+'<div class="tao_can_kuai"><div class="tao_can_kuai_name">'+sku[i].name+'</div><div class="tao_can_kuai_jia_ge">'+can_yu_huo_dong_huo_dong_jia(huo_dong_shang_pin_map.get(sku[i].id+"-"+result.value[0].id))+'￥'+can_yu_jia_ge_hong_dong(sku[i].id,result.value[0].id,sku[i].jiaGe)+'</div></div><div class="dzkq-input-two-tao-can-img"><img src="./img/me-ac.png" alt="对钩" /></div></div>';
+								}else{
+									str += '<div class="dzkq-jine-botton" data-id="'+sku[i].id+'" data-shi_fou_ke_dian="'+shi_fou_ke_yi_dian_ji(huo_dong_shang_pin_huo_dong_ming_e.get(sku[i].id+"-"+result.value[0].id))+'" data-value="'+sku[i].jiaGe+'">'+can_yu_huo_dong(huo_dong_shang_pin_map.get(""+sku[i].id+"-"+result.value[0].id))+'<div class="tao_can_kuai"><div class="tao_can_kuai_name">'+sku[i].name+'</div><div class="tao_can_kuai_jia_ge">'+can_yu_huo_dong_huo_dong_jia(huo_dong_shang_pin_map.get(sku[i].id+"-"+result.value[0].id))+'￥'+can_yu_jia_ge_hong_dong(sku[i].id,result.value[0].id,sku[i].jiaGe)+'</div></div><div class="dzkq-input-two-tao-can-img"><img src="./img/me-ac.png" alt="对钩" /></div></div>';
+								}	
+							}
+							$(".dzkq-jine").html(str+dianjiao(sku.length));
+						}else{
+							layer.msg("服务器响应失败请联系管理员");
+						}
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				});
+			}
+			//查询活动详情
+			function huo_dong(id){
+			    var zhuang_tai = "";
+				$.ajax({
+					url:"https://wangguan.topvoyage.top/service-feign/api/token/huoDongQuaner",
+				// 	url:"https://wangguan.topvoyage.top/service-feign/api/token/huoDongQuaner",
+					type: "POST",
+					async: false,
+					data:{"id":id},
+					dataType:'json',
+					success:function(result){
+						var bei_jing_tu_pian = 0;
+						if(result.code == 0){
+						    if(result.value != null){
+						        zhuang_tai = "2";
+    							huoDongName = result.value.name;
+    							minge = result.value.huoDongMingE;
+    							$(".dzkq-shang-pin-jian-jei-age-2").html(imgUrl(result.value.huoDongJeiShao));
+    							$(".dzkq-shang-pin-jian-jei-2-title").css("display","block");
+    							$(".dzkq-shang-pin-jian-jei-age-2").css("display","block");
+						    }
+						}else{
+							layer.msg("服务器响应失败请联系管理员");
+						}
+					},error:function(result){
+						layer.msg("服务器响应失败请联系管理员");
+					}
+				});
+				return zhuang_tai;
+			}
+			function dianjiao(length){
+				var str = "";
+				while(true){
+					if(length % 3 == 0){
+						break;
+					}else{
+						str += "<div style='width: 100%;max-width: 108px;height:77px;'></div>";
+						length++;
+					}
+				}
+				return str;
+			}
+		</script>
+	</body>
+</html>
